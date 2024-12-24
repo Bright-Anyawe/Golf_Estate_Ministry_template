@@ -1,0 +1,26 @@
+[
+  {
+    "week": 1,
+    "topic": "Faith and Works",
+    "memoryVerse": "James 2:14-26",
+    "mainText": "James 2:14-26",
+    "description": "Understanding the relationship between faith and works.",
+    "link": "https://example.com/bible-study/faith-and-works"
+  },
+  {
+    "week": 2,
+    "topic": "The Power of Prayer",
+    "memoryVerse": "Matthew 7:7-11",
+    "mainText": "Matthew 7:7-11",
+    "description": "The role of prayer in the life of a believer.",
+    "link": "https://example.com/bible-study/power-of-prayer"
+  },
+  {
+    "week": 3,
+    "topic": "The Fruit of the Spirit",
+    "memoryVerse": "Galatians 5:22-23",
+    "mainText": "Galatians 5:22-23",
+    "description": "Exploring the fruit of the Spirit and how to cultivate them.",
+    "link": "https://example.com/bible-study/fruit-of-the-spirit"
+  }
+]

@@ -1,0 +1,6 @@
+
+
+@media(max: 500px) {
+     .latestSermon {
+flex-direction: column;     }
+}
