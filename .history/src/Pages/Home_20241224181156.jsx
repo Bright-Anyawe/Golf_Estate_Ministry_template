@@ -1,9 +1,8 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { GeneralContext } from "../Context/ChurchContext";
 import Footer from "../Components/Footer";
 import { IconButton } from "@mui/material";
 import { DarkMode, LightMode } from "@mui/icons-material";
-import { useState } from "react";
 
 const Home = () => {
   const { events, sermons, bibleStudies } = useContext(GeneralContext);
@@ -11,7 +10,7 @@ const Home = () => {
 
   const handleDarkModeToggle = () => {
     setDarkMode((prevMode) => !prevMode);
-    document.body.classList.toggle("dark", !darkMode);
+    document.body.classList.toggle("dark", !darkMode); // Add dark mode class to body
   };
 
   const upcomingEvent = events[0];
@@ -46,7 +45,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="presidingSection bg-slate-400 flex flex-col md:flex-row justify-center items-center gap-24 p-4  py-16 text-center md:text-left">
+      <section className="presidingSection bg-slate-400 dark:bg-slate-800 flex flex-col md:flex-row justify-center items-center gap-24 p-4 py-16 text-center md:text-left">
         <div className="flex flex-shrink-0 items-center justify-center flex-col gap-8">
           <img
             src="/Golf Estate Assembly(Cop).jpg"
@@ -70,15 +69,21 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="upcomingEvent container flex flex-col justify-center items-center gap-10 bg-gray-300  p-8 py-16 text-center md:text-left">
-        <h2 className="text-5xl font-bold mb-4 text-#377dff text-indigo-700">
+      <section className="upcomingEvent container flex flex-col justify-center items-center gap-10 bg-gray-300 dark:bg-gray-700 p-8 py-16 text-center md:text-left">
+        <h2 className="text-5xl font-bold mb-4 text-#377dff dark:text-indigo-300 text-indigo-700">
           Upcoming Events
         </h2>
         {upcomingEvent ? (
-          <div className="eventCard bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center text-2xl">
-            <h3 className=" font-bold text-gray-800">{upcomingEvent.title}</h3>
-            <p className="text-gray-600 ">{upcomingEvent.date}</p>
-            <p className="text-gray-600">{upcomingEvent.description}</p>
+          <div className="eventCard bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 flex flex-col items-center text-center text-2xl">
+            <h3 className="font-bold text-gray-800 dark:text-gray-200">
+              {upcomingEvent.title}
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400">
+              {upcomingEvent.date}
+            </p>
+            <p className="text-gray-600 dark:text-gray-400">
+              {upcomingEvent.description}
+            </p>
             <button className="bg-indigo-700 text-white p-3 border-spacing-1 rounded-lg mt-4">
               Learn more
             </button>
@@ -86,54 +91,6 @@ const Home = () => {
         ) : (
           <p>No upcoming events at the moment.</p>
         )}
-      </section>
-
-      <section className="latestSermon container flex flex-col  justify-center items-center gap-10 bg-[url('/public/sundayService.png')] bg-no-repeat bg-cover bg-center bg-opacity-50 p-8 py-16 text-center md:text-left">
-        <h2 className="text-4xl font-bold mb-4 text-#377dff text-indigo-700">
-          Current Teachings of the Word.
-        </h2>
-
-        <div className=" teachingContainer flex flex-row  justify-center items-center gap-20">
-          <div className=" flex flex-col justify-center items-center gap-5">
-            <h2 className="text-3xl font-bold mb-4 text-#377dff">
-              Latest Sermon
-            </h2>
-
-            <div>
-              <h3 className="text-3xl font-semibold">{latestSermon.title}</h3>
-              <p className="text-xl">{latestSermon.description}</p>
-              <p className="font-bold text-xl">
-                Speaker: {latestSermon.speaker}
-              </p>
-              <p className="text-xl">
-                Date: {new Date(latestSermon.date).toLocaleDateString()}
-              </p>
-            </div>
-          </div>
-
-          <div className=" flex flex-col justify-center items-center gap-5 ">
-            <h2 className="text-3xl font-bold mb-4 text-#377dff">
-              Upcoming Bible Study
-            </h2>
-            <div>
-              <h3 className="text-3xl font-semibold">
-                {latestBibleStudy.topic}
-              </h3>
-              <p className="text-xl">{latestBibleStudy.description}</p>
-              <p className="font-bold text-xl">
-                Memory Verse: {latestBibleStudy.memoryVerse}
-              </p>
-              <p className="text-xl">Main Text: {latestBibleStudy.mainText}</p>
-            </div>
-          </div>
-        </div>
-
-        <button
-          className="WordBtn bg-indigo-700 text-white p-3 border-spacing-1 rounded-lg text-xl"
-          onClick={() => (window.location.href = latestBibleStudy.link)}
-        >
-          Learn more
-        </button>
       </section>
 
       <Footer />

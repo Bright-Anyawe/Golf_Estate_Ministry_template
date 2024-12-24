@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { GeneralContext } from "../Context/ChurchContext";
 import Footer from "../Components/Footer";
 import { IconButton } from "@mui/material";
@@ -9,9 +9,20 @@ const Home = () => {
   const { events, sermons, bibleStudies } = useContext(GeneralContext);
   const [darkMode, setDarkMode] = useState(false);
 
+  useEffect(() => {
+    // Check if dark mode preference is already set in localStorage or default to false
+    const savedDarkMode = localStorage.getItem("darkMode") === "true";
+    setDarkMode(savedDarkMode);
+    document.documentElement.classList.toggle("dark", savedDarkMode);
+  }, []);
+
   const handleDarkModeToggle = () => {
-    setDarkMode((prevMode) => !prevMode);
-    document.body.classList.toggle("dark", !darkMode);
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    // Toggle the dark class on the root element
+    document.documentElement.classList.toggle("dark", newDarkMode);
+    // Save the preference to localStorage
+    localStorage.setItem("darkMode", newDarkMode.toString());
   };
 
   const upcomingEvent = events[0];
@@ -25,7 +36,7 @@ const Home = () => {
   }, bibleStudies[0]);
 
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div>
       <section className="bg-slate-200 dark:bg-slate-900 text-white text-center overflow-hidden">
         <div className="darkMode">
           <IconButton
@@ -37,7 +48,7 @@ const Home = () => {
           </IconButton>
         </div>
 
-        <div className="w-full h-full max-w-full max-h-full relative overflow-hidden  mt-24 px-20 py-10">
+        <div className="w-full h-full max-w-full max-h-full relative overflow-hidden mt-24 px-20 py-10">
           <img
             src="/Cop%20welcome%20image.png"
             alt="Cop welcome image"
@@ -46,7 +57,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="presidingSection bg-slate-400 flex flex-col md:flex-row justify-center items-center gap-24 p-4  py-16 text-center md:text-left">
+      <section className="presidingSection bg-slate-400 flex flex-col md:flex-row justify-center items-center gap-24 p-4 py-16 text-center md:text-left">
         <div className="flex flex-shrink-0 items-center justify-center flex-col gap-8">
           <img
             src="/Golf Estate Assembly(Cop).jpg"

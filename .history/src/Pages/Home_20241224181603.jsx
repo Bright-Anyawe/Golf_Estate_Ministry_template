@@ -3,16 +3,12 @@ import { GeneralContext } from "../Context/ChurchContext";
 import Footer from "../Components/Footer";
 import { IconButton } from "@mui/material";
 import { DarkMode, LightMode } from "@mui/icons-material";
-import { useState } from "react";
+import 
 
 const Home = () => {
   const { events, sermons, bibleStudies } = useContext(GeneralContext);
   const [darkMode, setDarkMode] = useState(false);
 
-  const handleDarkModeToggle = () => {
-    setDarkMode((prevMode) => !prevMode);
-    document.body.classList.toggle("dark", !darkMode);
-  };
 
   const upcomingEvent = events[0];
 
@@ -25,17 +21,9 @@ const Home = () => {
   }, bibleStudies[0]);
 
   return (
-    <div className={darkMode ? "dark" : ""}>
-      <section className="bg-slate-200 dark:bg-slate-900 text-white text-center overflow-hidden">
-        <div className="darkMode">
-          <IconButton
-            onClick={handleDarkModeToggle}
-            className="transition-all duration-300 transform hover:scale-110"
-            style={{ color: darkMode ? "#fff" : "#000" }}
-          >
-            {darkMode ? <LightMode /> : <DarkMode />}
-          </IconButton>
-        </div>
+    <div>
+      <section className="bg-slate-200 text-white text-center overflow-hidden">
+        <div className="darkMode">Here will be the dark mode elem</div>
 
         <div className="w-full h-full max-w-full max-h-full relative overflow-hidden  mt-24 px-20 py-10">
           <img

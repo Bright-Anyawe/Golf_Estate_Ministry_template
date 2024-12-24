@@ -25,7 +25,7 @@ const Home = () => {
   }, bibleStudies[0]);
 
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div>
       <section className="bg-slate-200 dark:bg-slate-900 text-white text-center overflow-hidden">
         <div className="darkMode">
           <IconButton

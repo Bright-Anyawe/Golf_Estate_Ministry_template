@@ -9,10 +9,10 @@ const Home = () => {
   const { events, sermons, bibleStudies } = useContext(GeneralContext);
   const [darkMode, setDarkMode] = useState(false);
 
-  const handleDarkModeToggle = () => {
-    setDarkMode((prevMode) => !prevMode);
-    document.body.classList.toggle("dark", !darkMode);
-  };
+ const handleDarkModeToggle = () => {
+   setDarkMode((prevMode) => !prevMode);
+   document.body.classList.toggle("dark", !darkMode);
+ };
 
   const upcomingEvent = events[0];
 
@@ -25,7 +25,7 @@ const Home = () => {
   }, bibleStudies[0]);
 
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div>
       <section className="bg-slate-200 dark:bg-slate-900 text-white text-center overflow-hidden">
         <div className="darkMode">
           <IconButton

@@ -1,18 +1,9 @@
 import { useContext } from "react";
 import { GeneralContext } from "../Context/ChurchContext";
 import Footer from "../Components/Footer";
-import { IconButton } from "@mui/material";
-import { DarkMode, LightMode } from "@mui/icons-material";
-import { useState } from "react";
 
 const Home = () => {
   const { events, sermons, bibleStudies } = useContext(GeneralContext);
-  const [darkMode, setDarkMode] = useState(false);
-
-  const handleDarkModeToggle = () => {
-    setDarkMode((prevMode) => !prevMode);
-    document.body.classList.toggle("dark", !darkMode);
-  };
 
   const upcomingEvent = events[0];
 
@@ -25,25 +16,13 @@ const Home = () => {
   }, bibleStudies[0]);
 
   return (
-    <div className={darkMode ? "dark" : ""}>
-      <section className="bg-slate-200 dark:bg-slate-900 text-white text-center overflow-hidden">
-        <div className="darkMode">
-          <IconButton
-            onClick={handleDarkModeToggle}
-            className="transition-all duration-300 transform hover:scale-110"
-            style={{ color: darkMode ? "#fff" : "#000" }}
-          >
-            {darkMode ? <LightMode /> : <DarkMode />}
-          </IconButton>
-        </div>
-
-        <div className="w-full h-full max-w-full max-h-full relative overflow-hidden  mt-24 px-20 py-10">
-          <img
-            src="/Cop%20welcome%20image.png"
-            alt="Cop welcome image"
-            className="w-full h-full rounded-3xl object-cover"
-          />
-        </div>
+    <div>
+      <section className="bg-blue-500  text-white text-center ">
+        <img
+          src="/Cop%20welcome%20image.png"
+          alt="Cop welcome image"
+          className="h-5/6 relative rounded-l-lg rounded-b-3xl  px-10 py-10"
+        />
       </section>
 
       <section className="presidingSection bg-slate-400 flex flex-col md:flex-row justify-center items-center gap-24 p-4  py-16 text-center md:text-left">
