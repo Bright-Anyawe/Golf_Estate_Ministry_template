@@ -1,7 +1,7 @@
 import App from "../App";
 import ErrorPage from "../Pages/ErrorPage";
 import Home from "../Pages/Home";
-import Sermons from "../Pages/SermonsAndBibleStudies";
+
 import AboutUs from "../Pages/AboutUs";
 import Event from "../Pages/Events";
 import Ministries from "../Pages/Ministries/Ministries";
