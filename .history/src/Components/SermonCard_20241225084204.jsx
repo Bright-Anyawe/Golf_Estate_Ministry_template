@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+
 
 export const SermonCard = ({ sermon }) => {
   return (
@@ -21,14 +21,12 @@ export const SermonCard = ({ sermon }) => {
   );
 };
 
-SermonCard.propTypes = {
-  sermon: PropTypes.shape({
+EventCard.propTypes = {
+  event: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    speaker: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
   }).isRequired,
 };
 

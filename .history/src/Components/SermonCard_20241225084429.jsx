@@ -25,10 +25,9 @@ SermonCard.propTypes = {
   sermon: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    speaker: PropTypes.string.isRequired,
+    speaker: PropTypes.string.isRequired
     date: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
   }).isRequired,
 };
 

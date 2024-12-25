@@ -28,7 +28,6 @@ SermonCard.propTypes = {
     speaker: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
   }).isRequired,
 };
 
