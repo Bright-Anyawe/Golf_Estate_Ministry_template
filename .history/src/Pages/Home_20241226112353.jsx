@@ -40,7 +40,7 @@ const Home = () => {
             {darkMode ? <LightMode /> : <DarkMode />}
           </IconButton>
         </div>
-        {/* 
+
         <div className="relative w-full h-screen">
           <div className="absolute inset-0 bg-gradient-to-b from-blue-800 to-blue-500 opacity-70 z-10"></div>
           <img
@@ -48,18 +48,17 @@ const Home = () => {
             alt="concregation"
             className="w-full h-full object-cover rounded-3xl shadow-lg"
           />
-          <div className="absolute inset-0 z-50 flex items-center opacity-100   justify-center">
+          <div className="absolute inset-0 z-20 flex items-center justify-center">
             <Typography
               variant="h1"
               className="text-white font-extrabold text-4xl sm:text-6xl text-center leading-tight"
             >
-              <p className="welcomeText">Welcome </p>{" "}
-              <span className="subText">To Golf Estate Assembly</span>
+              <p className="text-9xl bold" >Welcome </p> <span>To Golf Estate Assembly</span>
             </Typography>
           </div>
-        </div> */}
+        </div>
 
-        <div className="w-full h-full max-w-full max-h-full relative overflow-hidden px-3 sm:px-5 md:px-10 lg:px-10 py-3 sm:py-5 md:pt-3 lg:py-5">
+        <div className="w-full h-full max-w-full max-h-full relative overflow-hidden   px-20 py-10">
           <img
             src="/Cop%20welcome%20image.png"
             alt="Cop welcome image"
@@ -68,29 +67,21 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="presidingSection bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 text-white flex flex-col md:flex-row justify-center items-center gap-16 p-8 py-20">
-        {/* Image and Title */}
-        <div className="flex flex-shrink-0 items-center justify-center flex-col gap-8 text-center md:text-left">
+      <section className="presidingSection bg-slate-400 flex flex-col md:flex-row justify-center items-center gap-24 p-4  py-16 text-center md:text-left">
+        <div className="flex flex-shrink-0 items-center justify-center flex-col gap-8">
           <img
             src="/Golf Estate Assembly(Cop).jpg"
             alt="Presiding Image"
-            className="w-72 h-72 md:w-96 md:h-96 rounded-full object-cover border-8 border-white shadow-2xl"
+            className="w-96 h-96 rounded-full object-cover border-4 border-white shadow-lg"
           />
-          <h5 className="text-2xl md:text-3xl font-bold tracking-wide">
-            Presiding Elder: Kofi Tetteh
-          </h5>
+          <h5 className="text-3xl font-bold">Presiding Elder: Kofi Tetteh</h5>
         </div>
-
-        {/* About Section */}
-        <div className="about max-w-2xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center md:text-left">
-            About Us
-          </h1>
-          <p className="text-lg md:text-xl leading-relaxed">
+        <div className="about md:ml-8 mt-6 md:mt-0 max-w-md">
+          <h1 className="text-3xl font-bold mb-4">About Us</h1>
+          <p className="text-2xl">
             We seek to honor God who gave His best (Christ Jesus as the Savior)
             by maintaining a high standard of excellence in all our ministries
-            and activities (<span className="italic">Colossians 3:23-24</span>).
-            <br />
+            and activities (Colossians 3:23-24). <br />
             <br />
             At the Church of Pentecost, we are committed to building a community
             that reflects the love of Christ. Through our worship, outreach, and
@@ -99,7 +90,6 @@ const Home = () => {
           </p>
         </div>
       </section>
-
       {/* 
       <section className="upcomingEvent container  flex flex-col justify-center items-center gap-10 bg-gray-300  p-8 py-16 text-center md:text-left">
         <h2 className="text-5xl font-bold mb-4 text-#377dff text-indigo-700">

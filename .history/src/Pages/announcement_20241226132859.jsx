@@ -9,11 +9,18 @@ export const Announcement = () => {
 
   return (
     <div>
-     
-      <div className="w-full h-full max-w-full max-h-full relative overflow-hidden px-3 sm:px-5 md:px-10 lg:px-10 py-3 sm:py-5 md:pt-3 lg:py-5">
+      <div className="w-full max-w-full h-screen relative overflow-hidden  px-10 py-10">
         <img
           src="/announcement.png"
           alt="announcement image"
+          className="w-full h-full rounded-3xl object-cover"
+        />
+      </div>
+
+      <div className="w-full h-full max-w-full max-h-full relative overflow-hidden px-3 sm:px-5 md:px-10 lg:px-10 py-3 sm:py-5 md:pt-3 lg:py-5">
+        <img
+          src="/Cop%20welcome%20image.png"
+          alt="Cop welcome image"
           className="w-full h-full rounded-3xl object-cover"
         />
       </div>

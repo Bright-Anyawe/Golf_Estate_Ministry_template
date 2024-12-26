@@ -88,7 +88,7 @@ const AboutUs = () => {
     <Box className="bg-gradient-to-br from-gray-200 via-blue-100 to-blue-200 min-h-screen p-5">
       
 
-      <div className="w-full h-full max-w-full max-h-full relative overflow-hidden px-3 sm:px-3 md:px-5 lg:px-10 py-3 sm:py-5 md:pt-3 lg:py-5">
+      <div className="w-full h-full max-w-full max-h-full relative overflow-hidden px-3 sm:px-5 md:px-10 lg:px-10 py-3 sm:py-5 md:pt-3 lg:py-5">
         <img
           src="/aboutUs.png"
           alt="announcement image"

@@ -1,0 +1,12 @@
+@media (max-width: 500px) {
+  .teachingContainer {
+    flex-direction: column;
+  }
+}
+
+.dark {
+  background-color: #121212; /* Example background color */
+  color: #ffffff; /* Example text color */
+}
+
+welcomeText

@@ -9,19 +9,15 @@
   color: #ffffff; /* Example text color */
 }
 
-
-
 .welcomeText {
   position: relative;
-  top: 9rem;
-  font-size: 12rem;
-  font-weight: 900;
+  top: 5rem;
+  font-size: 15rem;
+  font-weight: 700;
   color: rgb(226, 185, 0);
 }
 
 .subText {
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-weight: 800;
-  position: relative;
-  top: 5rem;
 }
