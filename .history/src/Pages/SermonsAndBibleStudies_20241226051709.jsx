@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import SermonCard from "../components/SermonCard.jsx";
-import { BibleStudiesCard } from "../Components/BibleStudies.jsx";
+import SermonCard
+import { BibleStudiesCard } from "../Components/SermonsAndBibleStudies.jsx.jsx";
+
 const Sermons = () => {
   const [sermons, setSermons] = useState([]);
   const [bibleStudies, setBibleStudies] = useState([]);
@@ -33,6 +34,7 @@ const Sermons = () => {
         </div>
       </div>
 
+      {/* Main Content Section */}
       <div className="container mx-auto my-16 px-6 sm:px-12">
         {/* Sermons Section */}
         <div className="bg-gradient-to-r from-gray-100 to-blue-50 p-10 rounded-lg shadow-lg mb-16">

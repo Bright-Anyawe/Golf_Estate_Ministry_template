@@ -13,7 +13,7 @@ const Home = () => {
     const isDark = !isDarkMode;
     setDarkMode(isDark);
     document.body.classList.toggle("dark", isDark);
-    console.log(document.body.className); 
+    console.log(document.body.className); // Check if the "dark" class is applied
   };
 
   const upcomingEvent = events[0];

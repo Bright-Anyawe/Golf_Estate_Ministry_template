@@ -10,10 +10,8 @@ const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   const handleDarkModeToggle = () => {
-    const isDark = !isDarkMode;
-    setDarkMode(isDark);
-    document.body.classList.toggle("dark", isDark);
-    console.log(document.body.className); 
+    setDarkMode((prevMode) => !prevMode);
+    document.body.classList.toggle("dark", !darkMode);
   };
 
   const upcomingEvent = events[0];
@@ -31,7 +29,7 @@ const Home = () => {
       <section className="bg-slate-200 dark:bg-slate-900 text-white text-center overflow-hidden">
         <div className="darkMode">
 
-          <p>Here will be dark</p>
+          
           {/* <IconButton
             onClick={handleDarkModeToggle}
             className="transition-all duration-300 transform hover:scale-110"

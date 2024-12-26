@@ -10,10 +10,9 @@ const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   const handleDarkModeToggle = () => {
-    const isDark = !isDarkMode;
-    setDarkMode(isDark);
-    document.body.classList.toggle("dark", isDark);
-    console.log(document.body.className); 
+    const isDar
+    setDarkMode((prevMode) => !prevMode);
+    document.body.classList.toggle("dark", !darkMode);
   };
 
   const upcomingEvent = events[0];

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
- const SermonCard = ({ sermon }) => {
+export default const SermonCard = ({ sermon }) => {
   return (
     <div className="bg-white shadow-md rounded p-4 hover:shadow-lg transition-shadow transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
       <h2 className="text-xl font-bold mb-2 text-blue-700">{sermon.title}</h2>
@@ -33,4 +33,4 @@ SermonCard.propTypes = {
 };
 
 
-export default SermonCard;
+// export default SermonCard;

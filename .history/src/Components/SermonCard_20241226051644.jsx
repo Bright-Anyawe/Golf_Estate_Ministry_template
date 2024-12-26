@@ -33,4 +33,4 @@ SermonCard.propTypes = {
 };
 
 
-export default SermonCard;
+// export default SermonCard;
