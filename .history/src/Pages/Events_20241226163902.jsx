@@ -111,7 +111,7 @@ const Event = () => {
             <input
               type="hidden"
               name="access_key"
-              value="ec323071-c9a1-48e4-9bba-87c32ecc2b27"
+              value="your-access-key-here"
             />
             <input type="hidden" name="Event_ID" value={registration.eventId} />
             <Box mb={3}>

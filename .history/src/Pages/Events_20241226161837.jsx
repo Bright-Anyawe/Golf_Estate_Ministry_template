@@ -1,9 +1,10 @@
-import { useContext, useState, useRef } from "react";
+import { useContext, useState } from "react";
 import { GeneralContext } from "../Context/ChurchContext";
 import EventCard from "../Components/EventCard";
 import {
   Box,
   Typography,
+  Grid,
   TextField,
   MenuItem,
   Button,
@@ -13,19 +14,22 @@ import {
   Paper,
 } from "@mui/material";
 
+
 const Event = () => {
   const { events } = useContext(GeneralContext);
-  const [selectedEvent, setSelectedEvent] = useState(null);
-  const eventsSectionRef = useRef(null);
+    const [selectedEvent, setSelectedEvent] = useState(null);
 
-  const handleDialogOpen = (event) => setSelectedEvent(event);
-  const handleDialogClose = () => setSelectedEvent(null);
+
+ const handleDialogOpen = (event) => setSelectedEvent(event);
+ const handleDialogClose = () => setSelectedEvent(null);
 
   const [registration, setRegistration] = useState({
     name: "",
     email: "",
     eventId: "",
   });
+
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -35,8 +39,12 @@ const Event = () => {
     }));
   };
 
-  const handleExploreEventsClick = () => {
-    eventsSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    alert(
+      `Thank you, ${registration.name}! You registered for Event ID: ${registration.eventId}.`
+    );
+    setRegistration({ name: "", email: "", eventId: "" });
   };
 
   return (
@@ -50,6 +58,7 @@ const Event = () => {
           className="w-full h-full object-cover"
         />
 
+        {/* Content */}
         <div className="absolute inset-0 z-20 flex flex-col justify-center items-center px-4 sm:px-8">
           <h1 className="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl text-center leading-tight">
             Events & Programs
@@ -59,19 +68,13 @@ const Event = () => {
             programs that uplift and inspire. From worship services to community
             outreach, there’s a place for everyone to grow closer to God.
           </p>
-          <button
-            className="mt-6 px-8 py-3 bg-white text-blue-800 font-bold rounded-lg shadow-md hover:bg-gray-100 transition duration-300"
-            onClick={handleExploreEventsClick}
-          >
+          <button className="mt-6 px-8 py-3 bg-white text-blue-800 font-bold rounded-lg shadow-md hover:bg-gray-100 transition duration-300">
             Explore Events
           </button>
         </div>
       </section>
 
-      <Box
-        className="bg-gradient-to-r from-blue-50 via-blue-100 to-blue-200 p-8 sm:p-12"
-        ref={eventsSectionRef}
-      >
+      <Box className="bg-gradient-to-r from-blue-50 via-blue-100 to-blue-200 p-8 sm:p-12">
         <Typography
           variant="h4"
           align="center"
@@ -101,19 +104,7 @@ const Event = () => {
           >
             Register for an Event
           </Typography>
-          <form
-            action="https://api.web3forms.com/submit"
-            method="POST"
-            onSubmit={() =>
-              setRegistration({ name: "", email: "", eventId: "" })
-            }
-          >
-            <input
-              type="hidden"
-              name="access_key"
-              value="ec323071-c9a1-48e4-9bba-87c32ecc2b27"
-            />
-            <input type="hidden" name="Event_ID" value={registration.eventId} />
+          <form onSubmit={handleFormSubmit}>
             <Box mb={3}>
               <TextField
                 label="Full Name"

@@ -4,7 +4,8 @@ import Footer from "../Components/Footer";
 import { IconButton } from "@mui/material";
 import { DarkMode, LightMode } from "@mui/icons-material";
 import { useState } from "react";
-import { Typography } from "@mui/material";
+import {  Typography } from "@mui/material";
+
 
 const Home = () => {
   const { events, sermons, bibleStudies } = useContext(GeneralContext);
@@ -99,61 +100,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="latestSermon container flex flex-col justify-center items-center gap-10 bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600 p-8 py-16 text-center md:text-left">
-        <h2 className="text-4xl font-bold mb-6 text-gray-900 shadow-lg">
-          Current Teachings of the Word
-        </h2>
 
-        <div className="teachingContainer flex flex-col md:flex-row justify-center items-center gap-10 w-full">
-          <div className="flex flex-col justify-center items-center gap-6 bg-white bg-opacity-90 p-8 rounded-xl shadow-2xl border border-gray-300 w-full md:w-1/2">
-            <h2 className="text-3xl font-bold mb-4 text-indigo-700">
-              Latest Sermon
-            </h2>
-            <div>
-              <h3 className="text-2xl font-semibold text-gray-800">
-                {latestSermon.title}
-              </h3>
-              <p className="text-lg text-gray-700 mt-2">
-                {latestSermon.description}
-              </p>
-              <p className="font-bold text-lg text-indigo-600 mt-4">
-                Speaker: {latestSermon.speaker}
-              </p>
-              <p className="text-lg text-gray-600 mt-2">
-                Date: {new Date(latestSermon.date).toLocaleDateString()}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col justify-center items-center gap-6 bg-white bg-opacity-90 p-8 rounded-xl shadow-2xl border border-gray-300 w-full md:w-1/2">
-            <h2 className="text-3xl font-bold mb-4 text-indigo-700">
-              Upcoming Bible Study
-            </h2>
-            <div>
-              <h3 className="text-2xl font-semibold text-gray-800">
-                {latestBibleStudy.topic}
-              </h3>
-              <p className="text-lg text-gray-700 mt-2">
-                {latestBibleStudy.description}
-              </p>
-              <p className="font-bold text-lg text-indigo-600 mt-4">
-                Memory Verse: {latestBibleStudy.memoryVerse}
-              </p>
-              <p className="text-lg text-gray-600 mt-2">
-                Main Text: {latestBibleStudy.mainText}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <button
-          className="bg-indigo-700 text-white p-4 rounded-lg text-xl mt-8 hover:bg-indigo-800 shadow-lg transition-all duration-300"
-          onClick={() => (window.location.href = latestBibleStudy.link)}
-        >
-          Learn more
-        </button>
-      </section>
-
+      
       <section className="upcomingEvent container flex flex-col justify-center items-center gap-10 bg-gradient-to-r from-teal-400 via-blue-500 to-indigo-600 p-8 py-16 text-center md:text-left">
         <h2 className="text-5xl font-bold mb-8 text-white">Upcoming Events</h2>
         {upcomingEvent ? (
@@ -173,6 +121,7 @@ const Home = () => {
           </p>
         )}
       </section>
+
     </div>
   );
 };

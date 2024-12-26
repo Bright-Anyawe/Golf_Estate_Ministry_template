@@ -1,6 +1,7 @@
-import { useContext, useState, useRef } from "react";
+import { useContext, useState } from "react";
 import { GeneralContext } from "../Context/ChurchContext";
 import EventCard from "../Components/EventCard";
+import { useRef } from "react";
 import {
   Box,
   Typography,
@@ -13,10 +14,11 @@ import {
   Paper,
 } from "@mui/material";
 
+
 const Event = () => {
   const { events } = useContext(GeneralContext);
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const eventsSectionRef = useRef(null);
+  const eventsSectionRef = useRef(null); 
 
   const handleDialogOpen = (event) => setSelectedEvent(event);
   const handleDialogClose = () => setSelectedEvent(null);
@@ -35,9 +37,17 @@ const Event = () => {
     }));
   };
 
-  const handleExploreEventsClick = () => {
-    eventsSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    alert(
+      `Thank you, ${registration.name}! You registered for Event ID: ${registration.eventId}.`
+    );
+    setRegistration({ name: "", email: "", eventId: "" });
   };
+
+   const handleExploreEventsClick = () => {
+     eventsSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+   };
 
   return (
     <>
@@ -50,7 +60,10 @@ const Event = () => {
           className="w-full h-full object-cover"
         />
 
-        <div className="absolute inset-0 z-20 flex flex-col justify-center items-center px-4 sm:px-8">
+        <div
+          className="absolute inset-0 z-20 flex flex-col justify-center items-center px-4 sm:px-8"
+          ref={eventsSectionRef}
+        >
           <h1 className="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl text-center leading-tight">
             Events & Programs
           </h1>
@@ -68,10 +81,7 @@ const Event = () => {
         </div>
       </section>
 
-      <Box
-        className="bg-gradient-to-r from-blue-50 via-blue-100 to-blue-200 p-8 sm:p-12"
-        ref={eventsSectionRef}
-      >
+      <Box className="bg-gradient-to-r from-blue-50 via-blue-100 to-blue-200 p-8 sm:p-12">
         <Typography
           variant="h4"
           align="center"
@@ -101,19 +111,7 @@ const Event = () => {
           >
             Register for an Event
           </Typography>
-          <form
-            action="https://api.web3forms.com/submit"
-            method="POST"
-            onSubmit={() =>
-              setRegistration({ name: "", email: "", eventId: "" })
-            }
-          >
-            <input
-              type="hidden"
-              name="access_key"
-              value="ec323071-c9a1-48e4-9bba-87c32ecc2b27"
-            />
-            <input type="hidden" name="Event_ID" value={registration.eventId} />
+          <form onSubmit={handleFormSubmit}>
             <Box mb={3}>
               <TextField
                 label="Full Name"

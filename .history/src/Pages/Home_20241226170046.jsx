@@ -4,7 +4,8 @@ import Footer from "../Components/Footer";
 import { IconButton } from "@mui/material";
 import { DarkMode, LightMode } from "@mui/icons-material";
 import { useState } from "react";
-import { Typography } from "@mui/material";
+import {  Typography } from "@mui/material";
+
 
 const Home = () => {
   const { events, sermons, bibleStudies } = useContext(GeneralContext);
@@ -98,6 +99,25 @@ const Home = () => {
           </p>
         </div>
       </section>
+      <section className="upcomingEvent container flex flex-col justify-center items-center gap-10 bg-gradient-to-r from-teal-400 via-blue-500 to-indigo-600 p-8 py-16 text-center md:text-left">
+        <h2 className="text-5xl font-bold mb-8 text-white">Upcoming Events</h2>
+        {upcomingEvent ? (
+          <div className="eventCard bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white shadow-2xl rounded-lg p-8 flex flex-col items-center text-center md:flex-row gap-6">
+            <div className="eventDetails text-center md:text-left">
+              <h3 className="font-bold text-3xl mb-2">{upcomingEvent.title}</h3>
+              <p className="text-lg text-gray-200">{upcomingEvent.date}</p>
+              <p className="text-gray-200 mt-4">{upcomingEvent.description}</p>
+            </div>
+            <button className="bg-indigo-800 text-white p-4 rounded-lg mt-6 md:mt-0 hover:bg-indigo-900 transition-all duration-300">
+              Learn more
+            </button>
+          </div>
+        ) : (
+          <p className="text-white text-xl">
+            No upcoming events at the moment.
+          </p>
+        )}
+      </section>
 
       <section className="latestSermon container flex flex-col justify-center items-center gap-10 bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600 p-8 py-16 text-center md:text-left">
         <h2 className="text-4xl font-bold mb-6 text-gray-900 shadow-lg">
@@ -105,6 +125,7 @@ const Home = () => {
         </h2>
 
         <div className="teachingContainer flex flex-col md:flex-row justify-center items-center gap-10 w-full">
+          {/* Latest Sermon Section */}
           <div className="flex flex-col justify-center items-center gap-6 bg-white bg-opacity-90 p-8 rounded-xl shadow-2xl border border-gray-300 w-full md:w-1/2">
             <h2 className="text-3xl font-bold mb-4 text-indigo-700">
               Latest Sermon
@@ -125,6 +146,7 @@ const Home = () => {
             </div>
           </div>
 
+          {/* Upcoming Bible Study Section */}
           <div className="flex flex-col justify-center items-center gap-6 bg-white bg-opacity-90 p-8 rounded-xl shadow-2xl border border-gray-300 w-full md:w-1/2">
             <h2 className="text-3xl font-bold mb-4 text-indigo-700">
               Upcoming Bible Study
@@ -152,26 +174,6 @@ const Home = () => {
         >
           Learn more
         </button>
-      </section>
-
-      <section className="upcomingEvent container flex flex-col justify-center items-center gap-10 bg-gradient-to-r from-teal-400 via-blue-500 to-indigo-600 p-8 py-16 text-center md:text-left">
-        <h2 className="text-5xl font-bold mb-8 text-white">Upcoming Events</h2>
-        {upcomingEvent ? (
-          <div className="eventCard bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white shadow-2xl rounded-lg p-8 flex flex-col items-center text-center md:flex-row gap-6">
-            <div className="eventDetails text-center md:text-left">
-              <h3 className="font-bold text-3xl mb-2">{upcomingEvent.title}</h3>
-              <p className="text-lg text-gray-200">{upcomingEvent.date}</p>
-              <p className="text-gray-200 mt-4">{upcomingEvent.description}</p>
-            </div>
-            <button className="bg-indigo-800 text-white p-4 rounded-lg mt-6 md:mt-0 hover:bg-indigo-900 transition-all duration-300">
-              Learn more
-            </button>
-          </div>
-        ) : (
-          <p className="text-white text-xl">
-            No upcoming events at the moment.
-          </p>
-        )}
       </section>
     </div>
   );

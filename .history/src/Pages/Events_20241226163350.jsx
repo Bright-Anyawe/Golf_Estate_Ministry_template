@@ -1,6 +1,7 @@
-import { useContext, useState, useRef } from "react";
+import { useContext, useState } from "react";
 import { GeneralContext } from "../Context/ChurchContext";
 import EventCard from "../Components/EventCard";
+import { useRef } from "react";
 import {
   Box,
   Typography,
@@ -13,10 +14,11 @@ import {
   Paper,
 } from "@mui/material";
 
+
 const Event = () => {
   const { events } = useContext(GeneralContext);
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const eventsSectionRef = useRef(null);
+  const eventsSectionRef = useRef(null); 
 
   const handleDialogOpen = (event) => setSelectedEvent(event);
   const handleDialogClose = () => setSelectedEvent(null);
@@ -35,9 +37,17 @@ const Event = () => {
     }));
   };
 
-  const handleExploreEventsClick = () => {
-    eventsSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    alert(
+      `Thank you, ${registration.name}! You registered for Event ID: ${registration.eventId}.`
+    );
+    setRegistration({ name: "", email: "", eventId: "" });
   };
+
+   const handleExploreEventsClick = () => {
+     eventsSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+   };
 
   return (
     <>
@@ -101,19 +111,7 @@ const Event = () => {
           >
             Register for an Event
           </Typography>
-          <form
-            action="https://api.web3forms.com/submit"
-            method="POST"
-            onSubmit={() =>
-              setRegistration({ name: "", email: "", eventId: "" })
-            }
-          >
-            <input
-              type="hidden"
-              name="access_key"
-              value="ec323071-c9a1-48e4-9bba-87c32ecc2b27"
-            />
-            <input type="hidden" name="Event_ID" value={registration.eventId} />
+          <form onSubmit={handleFormSubmit}>
             <Box mb={3}>
               <TextField
                 label="Full Name"

@@ -4,7 +4,8 @@ import Footer from "../Components/Footer";
 import { IconButton } from "@mui/material";
 import { DarkMode, LightMode } from "@mui/icons-material";
 import { useState } from "react";
-import { Typography } from "@mui/material";
+import {  Typography } from "@mui/material";
+
 
 const Home = () => {
   const { events, sermons, bibleStudies } = useContext(GeneralContext);
