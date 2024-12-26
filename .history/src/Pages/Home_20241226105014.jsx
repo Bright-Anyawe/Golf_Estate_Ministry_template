@@ -10,10 +10,10 @@ const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   const handleDarkModeToggle = () => {
-    const isDark = !darkMode;
+    const isDark = !isDarkMode;
     setDarkMode(isDark);
     document.body.classList.toggle("dark", isDark);
-    console.log(document.body.className);
+    console.log(document.body.className); 
   };
 
   const upcomingEvent = events[0];
@@ -28,15 +28,17 @@ const Home = () => {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <section className="bg-slate-200 dark:bg-slate-900 text-white text-center overflow-hidden">
-        <div className="darkMode flex items-end flex-col justify-around">
-          <IconButton
+      <section className="bg-slate-200 dark:bg-slate-900 text-white text-centeroverflow-hidden">
+        <div className="darkMode">
+
+          <p>Here will be dark</p>
+          {/* <IconButton
             onClick={handleDarkModeToggle}
-            className="transition-all duration-300 transform hover:scale-110 relative top-5 right-20"
+            className="transition-all duration-300 transform hover:scale-110"
             style={{ color: darkMode ? "#fff" : "#000" }}
           >
             {darkMode ? <LightMode /> : <DarkMode />}
-          </IconButton>
+          </IconButton> */}
         </div>
 
         <div className="w-full h-full max-w-full max-h-full relative overflow-hidden   px-20 py-10">
@@ -178,6 +180,7 @@ const Home = () => {
           Learn more
         </button>
       </section>
+
     </div>
   );
 };

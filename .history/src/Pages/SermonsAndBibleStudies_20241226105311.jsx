@@ -25,7 +25,7 @@ const Sermons = () => {
         <img
           src="/bibleStudies2.png"
           alt="Bible Studies"
-          className="w-full h-full object-cover shadow-lg"
+          className="w-full h-full object-cover rounded-3xl shadow-lg"
         />
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <h1 className="text-white text-5xl md:text-6xl font-extrabold text-center">

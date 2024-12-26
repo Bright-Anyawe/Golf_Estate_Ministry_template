@@ -32,7 +32,7 @@ const Home = () => {
         <div className="darkMode flex items-end flex-col justify-around">
           <IconButton
             onClick={handleDarkModeToggle}
-            className="transition-all duration-300 transform hover:scale-110 relative top-5 right-20"
+            className="transition-all duration-300 transform hover:scale-110 relative top-10"
             style={{ color: darkMode ? "#fff" : "#000" }}
           >
             {darkMode ? <LightMode /> : <DarkMode />}

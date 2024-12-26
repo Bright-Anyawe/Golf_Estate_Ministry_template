@@ -9,7 +9,7 @@ export const Announcement = () => {
 
   return (
     <div>
-      <div className="w-full max-w-full h-screen relative overflow-hidden  px-10 py-10">
+      <div className="w-full max-w-full h-screen relative overflow-hidden   px-10 py-10">
         <img
           src="/announcement.png"
           alt="announcement image"

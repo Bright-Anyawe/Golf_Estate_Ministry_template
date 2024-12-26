@@ -29,10 +29,10 @@ const Home = () => {
   return (
     <div className={darkMode ? "dark" : ""}>
       <section className="bg-slate-200 dark:bg-slate-900 text-white text-center overflow-hidden">
-        <div className="darkMode flex items-end flex-col justify-around">
+        <div className="darkMode flex items-baseline flex-col">
           <IconButton
             onClick={handleDarkModeToggle}
-            className="transition-all duration-300 transform hover:scale-110 relative top-5 right-20"
+            className="transition-all duration-300 transform hover:scale-110"
             style={{ color: darkMode ? "#fff" : "#000" }}
           >
             {darkMode ? <LightMode /> : <DarkMode />}

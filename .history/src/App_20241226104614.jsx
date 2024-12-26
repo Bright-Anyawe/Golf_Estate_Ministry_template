@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Components/Header";
 import { useState } from "react";
-import Footer from "./Components/Footer";
+import Footer
 
 import { GeneralContext } from "./Context/ChurchContext";
 
