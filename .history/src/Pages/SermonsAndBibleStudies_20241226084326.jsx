@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import SermonCard from "../Components/SermonCard";
-import BibleStudiesCard from "../Components/BibleStudies";
+import SermonCard from "../Components/SermonCard.jsx";
 
 const Sermons = () => {
   const [sermons, setSermons] = useState([]);
