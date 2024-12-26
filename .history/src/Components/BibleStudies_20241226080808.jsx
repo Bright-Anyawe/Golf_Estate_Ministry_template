@@ -41,4 +41,4 @@ BibleStudiesCard.propTypes = {
   }).isRequired,
 };
 
-export default BibleStudiesCard
+export default Bible

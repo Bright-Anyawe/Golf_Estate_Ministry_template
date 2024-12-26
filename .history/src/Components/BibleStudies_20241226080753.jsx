@@ -40,5 +40,3 @@ BibleStudiesCard.propTypes = {
     link: PropTypes.string.isRequired,
   }).isRequired,
 };
-
-export default BibleStudiesCard

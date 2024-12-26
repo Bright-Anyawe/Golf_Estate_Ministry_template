@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import SermonCard from "../Components/SermonCard.jsx";
+import 
 import BibleStudiesCard from "../Components/BibleStudies.jsx";
 
 const Sermons = () => {

@@ -1,7 +1,7 @@
 
 import PropTypes from "prop-types";
 
- const BibleStudiesCard = ({ bibleStudies }) => {
+export const BibleStudiesCard = ({ bibleStudies }) => {
   return (
     <div className="bg-white shadow-xl rounded-lg p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
       <h3 className="text-xl font-bold text-blue-700 mb-4">
@@ -40,5 +40,3 @@ BibleStudiesCard.propTypes = {
     link: PropTypes.string.isRequired,
   }).isRequired,
 };
-
-export default BibleStudiesCard
