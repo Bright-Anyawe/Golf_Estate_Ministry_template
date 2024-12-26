@@ -63,7 +63,7 @@ const memberShip = [
     description: "Description about the member goes here.",
   },
   {
-    image: "/Madam Sisi.jpg",
+    image: "/public/Madam Sisi.jpg",
     name: "Member Two",
     title: "Member Title",
     description: "Description about the member goes here.",

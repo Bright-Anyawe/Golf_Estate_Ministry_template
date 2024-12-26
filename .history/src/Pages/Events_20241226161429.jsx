@@ -13,6 +13,12 @@ import {
   DialogContent,
   Paper,
 } from "@mui/material";
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  
+} from "@mui/material";
 
 
 const Event = () => {

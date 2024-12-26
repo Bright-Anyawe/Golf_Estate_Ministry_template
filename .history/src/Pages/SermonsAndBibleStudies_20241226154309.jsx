@@ -59,6 +59,7 @@ const Sermons = () => {
           )}
         </div>
 
+        {/* Weekly Bible Studies Section */}
         <div className="bg-gradient-to-r from-blue-50 to-gray-100 p-10 rounded-lg shadow-lg">
           <h2 className="text-4xl font-extrabold text-center text-blue-800 mb-8">
             Weekly Bible Studies

@@ -63,7 +63,7 @@ const memberShip = [
     description: "Description about the member goes here.",
   },
   {
-    image: "/Madam Sisi.jpg",
+    image: "/member2.jpg",
     name: "Member Two",
     title: "Member Title",
     description: "Description about the member goes here.",
@@ -224,7 +224,7 @@ const AboutUs = () => {
         >
           Meet Our Members
         </Typography>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 cursor-pointer">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {memberShip.map((member, index) => (
             <div
               key={index}

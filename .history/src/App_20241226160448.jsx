@@ -17,7 +17,34 @@ function App() {
     return date.toLocaleDateString("en-US", options);
   };
 
-  
+  const [events] = useState(
+    [
+      {
+        id: 1,
+        title: "Sunday Service",
+        date: "2024-12-24",
+        description: "Join us for worship and a sermon at 9:00 AM.",
+      },
+      {
+        id: 2,
+        title: "Youth Fellowship",
+        date: "2024-12-30",
+        description:
+          "An evening of prayer, praise, and discussion for young adults.",
+      },
+      {
+        id: 3,
+        title: "Community Outreach",
+        date: "2025-01-05",
+        description:
+          "Help us serve the community with food and clothing donations.",
+      },
+    ].map((event) => ({
+      ...event,
+      date: formatDateString(event.date),
+    }))
+  );
+
   const [events] = useState(
     [
       {
@@ -42,56 +69,10 @@ function App() {
             responsible: "Pastor John Doe",
           },
         ],
+        
       },
-      {
-        id: 2,
-        title: "Youth Fellowship",
-        date: "2024-12-30",
-        description:
-          "An evening of prayer, praise, and discussion for young adults.",
-        programOutline: [
-          {
-            time: "9:00 AM",
-            activity: "Opening Prayer",
-            responsible: "Eld. Bannor",
-          },
-          {
-            time: "9:15 AM",
-            activity: "Praise and Worship",
-            responsible: "Choir",
-          },
-          {
-            time: "9:45 AM",
-            activity: "Sermon",
-            responsible: "Pastor John Doe",
-          },
-        ],
-      },
-      {
-        id: 3,
-        title: "Community Outreach",
-        date: "2025-01-05",
-        description:
-          "Help us serve the community with food and clothing donations.",
-        programOutline: [
-          {
-            time: "9:00 AM",
-            activity: "Opening Prayer",
-            responsible: "Eld. Bannor",
-          },
-          {
-            time: "9:15 AM",
-            activity: "Praise and Worship",
-            responsible: "Choir",
-          },
-          {
-            time: "9:45 AM",
-            activity: "Sermon",
-            responsible: "Pastor John Doe",
-          },
-        ],
-      },
-
+      
+      // Repeat for other events...
     ].map((event) => ({
       ...event,
       date: formatDateString(event.date),
@@ -133,41 +114,43 @@ function App() {
     }))
   );
 
-  const weeklyAnnouncements = [
-    {
-      id: 1,
-      title: "Prayer Meeting",
-      date: "2024-12-27",
-      description: "Join us for a time of prayer and fellowship at 7 PM.",
-    },
-    {
-      id: 2,
-      title: "Youth Bible Study",
-      date: "2024-12-28",
-      description: "A study session for the youth at 6 PM.",
-    },
-  ].map((event) => ({
-    ...event,
-    date: formatDateString(event.date),
-  }));
+  const weeklyAnnouncements = 
+    [
+      {
+        id: 1,
+        title: "Prayer Meeting",
+        date: "2024-12-27",
+        description: "Join us for a time of prayer and fellowship at 7 PM.",
+      },
+      {
+        id: 2,
+        title: "Youth Bible Study",
+        date: "2024-12-28",
+        description: "A study session for the youth at 6 PM.",
+      },
+    ].map((event) => ({
+      ...event,
+      date: formatDateString(event.date),
+    }))
 
-  const monthlyAnnouncements = [
-    {
-      id: 1,
-      title: "Monthly Outreach",
-      date: "2024-12-30",
-      description: "Community outreach program at 10 AM.",
-    },
-    {
-      id: 2,
-      title: "Leadership Retreat",
-      date: "2024-12-31",
-      description: "Leadership training and planning session at 9 AM.",
-    },
-  ].map((event) => ({
-    ...event,
-    date: formatDateString(event.date),
-  }));
+  const monthlyAnnouncements = 
+    [
+      {
+        id: 1,
+        title: "Monthly Outreach",
+        date: "2024-12-30",
+        description: "Community outreach program at 10 AM.",
+      },
+      {
+        id: 2,
+        title: "Leadership Retreat",
+        date: "2024-12-31",
+        description: "Leadership training and planning session at 9 AM.",
+      },
+    ].map((event) => ({
+      ...event,
+      date: formatDateString(event.date),
+    }))
 
   const [bibleStudies] = useState([
     {

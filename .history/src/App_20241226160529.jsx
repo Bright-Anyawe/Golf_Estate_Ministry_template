@@ -17,7 +17,34 @@ function App() {
     return date.toLocaleDateString("en-US", options);
   };
 
-  
+  const [events] = useState(
+    [
+      {
+        id: 1,
+        title: "Sunday Service",
+        date: "2024-12-24",
+        description: "Join us for worship and a sermon at 9:00 AM.",
+      },
+      {
+        id: 2,
+        title: "Youth Fellowship",
+        date: "2024-12-30",
+        description:
+          "An evening of prayer, praise, and discussion for young adults.",
+      },
+      {
+        id: 3,
+        title: "Community Outreach",
+        date: "2025-01-05",
+        description:
+          "Help us serve the community with food and clothing donations.",
+      },
+    ].map((event) => ({
+      ...event,
+      date: formatDateString(event.date),
+    }))
+  );
+
   const [events] = useState(
     [
       {
@@ -73,25 +100,9 @@ function App() {
         date: "2025-01-05",
         description:
           "Help us serve the community with food and clothing donations.",
-        programOutline: [
-          {
-            time: "9:00 AM",
-            activity: "Opening Prayer",
-            responsible: "Eld. Bannor",
-          },
-          {
-            time: "9:15 AM",
-            activity: "Praise and Worship",
-            responsible: "Choir",
-          },
-          {
-            time: "9:45 AM",
-            activity: "Sermon",
-            responsible: "Pastor John Doe",
-          },
-        ],
       },
 
+      // Repeat for other events...
     ].map((event) => ({
       ...event,
       date: formatDateString(event.date),

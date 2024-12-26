@@ -8,28 +8,17 @@ import {
   TextField,
   MenuItem,
   Button,
-  Dialog,
-  DialogTitle,
-  DialogContent,
   Paper,
 } from "@mui/material";
 
-
 const Event = () => {
   const { events } = useContext(GeneralContext);
-    const [selectedEvent, setSelectedEvent] = useState(null);
-
-
- const handleDialogOpen = (event) => setSelectedEvent(event);
- const handleDialogClose = () => setSelectedEvent(null);
 
   const [registration, setRegistration] = useState({
     name: "",
     email: "",
     eventId: "",
   });
-
-
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -49,32 +38,22 @@ const Event = () => {
 
   return (
     <>
-      <section className="relative w-full h-screen overflow-hidden">
-        {/* Background Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-600 opacity-80 z-10"></div>
-
-        {/* Background Image */}
+      <div className="relative w-full h-screen">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-900 to-blue-600 opacity-70 z-10"></div>
         <img
           src="/peopleWithTheirLifted.png"
           alt="people with their hands lifted"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover rounded-3xl shadow-lg"
         />
-
-        {/* Content */}
-        <div className="absolute inset-0 z-20 flex flex-col justify-center items-center px-4 sm:px-8">
-          <h1 className="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl text-center leading-tight">
+        <div className="absolute inset-0 z-20 flex items-center justify-center">
+          <Typography
+            variant="h1"
+            className="text-white font-extrabold text-5xl sm:text-6xl text-center leading-tight"
+          >
             Events & Programs
-          </h1>
-          <p className="text-white text-lg sm:text-xl md:text-2xl mt-4 max-w-3xl text-center leading-relaxed">
-            Join us in our journey of faith through our diverse events and
-            programs that uplift and inspire. From worship services to community
-            outreach, there’s a place for everyone to grow closer to God.
-          </p>
-          <button className="mt-6 px-8 py-3 bg-white text-blue-800 font-bold rounded-lg shadow-md hover:bg-gray-100 transition duration-300">
-            Explore Events
-          </button>
+          </Typography>
         </div>
-      </section>
+      </div>
 
       <Box className="bg-gradient-to-r from-blue-50 via-blue-100 to-blue-200 p-8 sm:p-12">
         <Typography
@@ -85,15 +64,14 @@ const Event = () => {
         >
           Events & Programs
         </Typography>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
+
+        <Grid container spacing={4} className="mb-10">
           {events.map((event) => (
-            <EventCard
-              key={event.id}
-              event={event}
-              onLearnMore={() => handleDialogOpen(event)}
-            />
+            <Grid item xs={12} sm={6} md={4} key={event.id}>
+              <EventCard event={event} />
+            </Grid>
           ))}
-        </div>
+        </Grid>
 
         {/* Registration Form */}
         <Paper
@@ -163,30 +141,6 @@ const Event = () => {
           </form>
         </Paper>
       </Box>
-
-      {selectedEvent && (
-        <Dialog open onClose={handleDialogClose}>
-          <DialogTitle>{selectedEvent.title} - Program Outline</DialogTitle>
-          <DialogContent>
-            {selectedEvent.programOutline.map((item, index) => (
-              <div key={index} className="mb-4">
-                <Typography variant="body1">
-                  <strong>{item.time}</strong>: {item.activity} by{" "}
-                  {item.responsible}
-                </Typography>
-              </div>
-            ))}
-          </DialogContent>
-          <div className="p-4">
-            <Button
-              onClick={handleDialogClose}
-              className="bg-blue-500 text-white px-4 py-2 rounded"
-            >
-              Close
-            </Button>
-          </div>
-        </Dialog>
-      )}
     </>
   );
 };

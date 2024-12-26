@@ -37,17 +37,17 @@ const LeaderShip = [
     name: "Deaconess Fabri Yeboah",
     title: "Choir Madam",
     description:
-      "Deaconess Fabri Yeboah oversees [responsibility], ensuring smooth operations and member engagement.",
+      "Deacon Peter oversees [responsibility], ensuring smooth operations and member engagement.",
   },
   {
-    image: "/Deaconess.jpg",
+    image: "/Elder Ashanti.jpg",
     name: "Deacon Peter Brown",
     title: "Deacon",
     description:
       "Deacon Peter oversees [responsibility], ensuring smooth operations and member engagement.",
   },
   {
-    image: "/Retired Officer.jpg",
+    image: "/Elder Ashanti.jpg",
     name: "Deacon Peter Brown",
     title: "Deacon",
     description:
@@ -63,13 +63,13 @@ const memberShip = [
     description: "Description about the member goes here.",
   },
   {
-    image: "/Madam Sisi.jpg",
+    image: "/member2.jpg",
     name: "Member Two",
     title: "Member Title",
     description: "Description about the member goes here.",
   },
   {
-    image: "/member3.jpg",
+    image: "public/member2.jpg",
     name: "Member Three",
     title: "Member Title",
     description: "Description about the member goes here.",
@@ -224,7 +224,7 @@ const AboutUs = () => {
         >
           Meet Our Members
         </Typography>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 cursor-pointer">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {memberShip.map((member, index) => (
             <div
               key={index}
@@ -234,7 +234,7 @@ const AboutUs = () => {
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-64 h-64 mx-auto rounded-full mb-4 object-cover"
+                className="w-60 h-60 mx-auto rounded-full mb-4 object-cover"
               />
               <h3 className="text-lg font-bold text-blue-800">{member.name}</h3>
               <p className="text-gray-500">{member.title}</p>

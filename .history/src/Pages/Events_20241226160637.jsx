@@ -8,28 +8,19 @@ import {
   TextField,
   MenuItem,
   Button,
-  Dialog,
-  DialogTitle,
-  DialogContent,
   Paper,
 } from "@mui/material";
-
 
 const Event = () => {
   const { events } = useContext(GeneralContext);
     const [selectedEvent, setSelectedEvent] = useState(null);
 
 
- const handleDialogOpen = (event) => setSelectedEvent(event);
- const handleDialogClose = () => setSelectedEvent(null);
-
   const [registration, setRegistration] = useState({
     name: "",
     email: "",
     eventId: "",
   });
-
-
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -85,15 +76,14 @@ const Event = () => {
         >
           Events & Programs
         </Typography>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
+
+        <Grid container spacing={4} className="mb-10">
           {events.map((event) => (
-            <EventCard
-              key={event.id}
-              event={event}
-              onLearnMore={() => handleDialogOpen(event)}
-            />
+            <Grid item xs={12} sm={6} md={4} key={event.id}>
+              <EventCard event={event} />
+            </Grid>
           ))}
-        </div>
+        </Grid>
 
         {/* Registration Form */}
         <Paper
@@ -163,30 +153,6 @@ const Event = () => {
           </form>
         </Paper>
       </Box>
-
-      {selectedEvent && (
-        <Dialog open onClose={handleDialogClose}>
-          <DialogTitle>{selectedEvent.title} - Program Outline</DialogTitle>
-          <DialogContent>
-            {selectedEvent.programOutline.map((item, index) => (
-              <div key={index} className="mb-4">
-                <Typography variant="body1">
-                  <strong>{item.time}</strong>: {item.activity} by{" "}
-                  {item.responsible}
-                </Typography>
-              </div>
-            ))}
-          </DialogContent>
-          <div className="p-4">
-            <Button
-              onClick={handleDialogClose}
-              className="bg-blue-500 text-white px-4 py-2 rounded"
-            >
-              Close
-            </Button>
-          </div>
-        </Dialog>
-      )}
     </>
   );
 };

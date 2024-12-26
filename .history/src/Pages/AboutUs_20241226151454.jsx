@@ -63,7 +63,7 @@ const memberShip = [
     description: "Description about the member goes here.",
   },
   {
-    image: "/Madam Sisi.jpg",
+    image: "/member2.jpg",
     name: "Member Two",
     title: "Member Title",
     description: "Description about the member goes here.",
@@ -224,7 +224,7 @@ const AboutUs = () => {
         >
           Meet Our Members
         </Typography>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 cursor-pointer">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 cursor-pointerc:\Users\DELL\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\97F081D3B1B352E9D1AAA2225DD6BB16\WhatsApp Image 2024-12-24 at 15.31.16_78453b72.jpg">
           {memberShip.map((member, index) => (
             <div
               key={index}

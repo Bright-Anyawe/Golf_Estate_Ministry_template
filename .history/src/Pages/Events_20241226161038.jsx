@@ -8,10 +8,14 @@ import {
   TextField,
   MenuItem,
   Button,
+  Paper,
+} from "@mui/material";
+import {
   Dialog,
   DialogTitle,
   DialogContent,
-  Paper,
+  Typography,
+  Button,
 } from "@mui/material";
 
 

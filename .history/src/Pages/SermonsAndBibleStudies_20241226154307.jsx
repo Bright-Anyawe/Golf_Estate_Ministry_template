@@ -21,6 +21,7 @@ const Sermons = () => {
   return (
     <>
       <section className="relative w-full h-screen bg-gradient-to-b from-blue-900 to-blue-600">
+        {/* Background Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-600 opacity-80 z-10"></div>
 
         <img
@@ -59,6 +60,7 @@ const Sermons = () => {
           )}
         </div>
 
+        {/* Weekly Bible Studies Section */}
         <div className="bg-gradient-to-r from-blue-50 to-gray-100 p-10 rounded-lg shadow-lg">
           <h2 className="text-4xl font-extrabold text-center text-blue-800 mb-8">
             Weekly Bible Studies

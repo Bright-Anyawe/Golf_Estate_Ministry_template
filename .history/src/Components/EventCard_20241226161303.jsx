@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
-// import {
-//   Card,
-//   CardContent,
-//   Typography,
-//   CardActions,
-//   Button,
-// } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Typography,
+  CardActions,
+  Button,
+} from "@mui/material";
 
 const EventCard = ({ event, onLearnMore }) => (
   <div className="border border-gray-300 shadow-md rounded-lg p-4">
