@@ -43,7 +43,7 @@ const Home = () => {
           <img
             src="/Cop%20welcome%20image.png"
             alt="Cop welcome image"
-            className="w-full h-full rounded-3xl object-cover sm:h-10 md:h-96 lg:h-auto"
+            className="w-full  rounded-3xl object-cover sm:h-10 lg:h-auto "
           />
         </div>
       </section>

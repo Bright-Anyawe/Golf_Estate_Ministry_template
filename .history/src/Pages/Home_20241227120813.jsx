@@ -39,11 +39,12 @@ const Home = () => {
             {darkMode ? <LightMode /> : <DarkMode />}
           </IconButton>
         </div> */}
-        <div className="w-full h-full max-w-full max-h-full relative overflow-hidden px-3 sm:px-5 md:px-10 lg:px-10 py-3 sm:py-5 md:pt-3 lg:py-5">
+
+        <div className="w-full h-full max-w-full max-h-full relative overflow-hidden  px-3 sm:px-5 md:px-10 lg:px-10 py-3 sm:py-5 md:pt-3 lg:py-5">
           <img
             src="/Cop%20welcome%20image.png"
             alt="Cop welcome image"
-            className="w-full h-full rounded-3xl object-cover sm:h-10 md:h-96 lg:h-auto"
+            className="w-full h-full rounded-3xl object-cover sm:h-10"
           />
         </div>
       </section>
@@ -122,6 +123,7 @@ const Home = () => {
                 <div className="h-40 bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 flex justify-center items-center text-white text-2xl font-bold">
                   {event.title.toUpperCase()}
                 </div>
+                {/* Event Details */}
                 <div className="p-6">
                   <p className="text-gray-500 text-sm uppercase tracking-wide mb-2">
                     {event.date}
