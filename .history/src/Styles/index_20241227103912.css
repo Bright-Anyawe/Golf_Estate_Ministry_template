@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ministerCard:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 96px fr;
+}
+
+header {
+  grid-area: 1 / 1 / 3 / 2;
+}
+
+main {
+ grid-area: 2 / 1 / 5 / 3;}
+
+footer {
+grid-area: 5 / 1 / 6 / 3;}
