@@ -9,44 +9,39 @@ const Contact = () => {
 
 
 const handleSubmit = async (e) => {
-   const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "" });
-  const [formValues, setFormValues] = useState({ name: "", email: "", message: "" });
+  e.preventDefault();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: new FormData(e.target),
+    });
 
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: new FormData(e.target),
-      });
+    const data = await response.json();
 
-      const data = await response.json();
-
-      if (data.success) {
-        setFormValues({ name: "", email: "", message: "" });
-        setSnackbar({
-          open: true,
-          message: "Form submitted successfully!",
-          severity: "success",
-        });
-      } else {
-        setSnackbar({
-          open: true,
-          message: "There was an issue submitting the form. Please try again.",
-          severity: "error",
-        });
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
+    if (data.success) {
+      setRegistration({ name: "", email: "", eventId: "" });
       setSnackbar({
         open: true,
-        message: "There was an error submitting the form. Please try again.",
+        message: "Form submitted successfully!",
+        severity: "success",
+      });
+    } else {
+      setSnackbar({
+        open: true,
+        message: "There was an issue submitting the form. Please try again.",
         severity: "error",
       });
     }
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    setSnackbar({
+      open: true,
+      message: "There was an error submitting the form. Please try again.",
+      severity: "error",
+    });
   }
-
+};
 
   return (
     <>

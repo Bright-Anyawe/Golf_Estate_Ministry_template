@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { GeneralContext } from "../Context/ChurchContext";
 import Footer from "../Components/Footer";
 import { IconButton } from "@mui/material";
-// import { DarkMode, LightMode } from "@mui/icons-material";
+import { DarkMode, LightMode } from "@mui/icons-material";
 import { useState } from "react";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -11,13 +11,14 @@ const Home = () => {
   const { events, sermons, bibleStudies } = useContext(GeneralContext);
   const [darkMode, setDarkMode] = useState(false);
 
-  // const handleDarkModeToggle = () => {
-  //   const isDark = !darkMode;
-  //   setDarkMode(isDark);
-  //   document.body.classList.toggle("dark", isDark);
-  //   console.log(document.body.className);
-  // };
+  const handleDarkModeToggle = () => {
+    const isDark = !darkMode;
+    setDarkMode(isDark);
+    document.body.classList.toggle("dark", isDark);
+    console.log(document.body.className);
+  };
 
+  const upcomingEvent = events[0];
 
   const latestSermon = sermons.reduce((latest, sermon) => {
     return new Date(sermon.date) > new Date(latest.date) ? sermon : latest;
@@ -132,7 +133,7 @@ const Home = () => {
                   <button
                     className="w-full bg-purple-500 text-white py-2 rounded-lg font-semibold hover:bg-purple-600 transition-all"
                   >
-                    <Link to="event" >Learn More</Link>
+                    <Link to="events" >Learn More</Link>
                   </button>
                 </div>
               </div>

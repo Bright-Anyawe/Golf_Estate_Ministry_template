@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { GeneralContext } from "../Context/ChurchContext";
 import Footer from "../Components/Footer";
 import { IconButton } from "@mui/material";
-// import { DarkMode, LightMode } from "@mui/icons-material";
+import { DarkMode, LightMode } from "@mui/icons-material";
 import { useState } from "react";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";

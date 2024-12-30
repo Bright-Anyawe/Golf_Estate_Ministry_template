@@ -45,7 +45,7 @@ const handleSubmit = async (e) => {
         severity: "error",
       });
     }
-  }
+  }}
 
 
   return (
@@ -66,6 +66,65 @@ const handleSubmit = async (e) => {
           </Typography>
         </div>
       </div>
+
+      <Box className="container mx-auto p-8">
+        <Typography variant="h4" align="center" gutterBottom className="font-bold text-blue-600 mb-10">
+          Contact Us
+        </Typography>
+
+        <Box className="bg-gradient-to-r from-blue-100 to-white p-8 rounded-lg shadow-lg">
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={6}>
+              <Typography variant="h6" className="text-2xl font-semibold text-gray-800 mb-6">
+                Send Us a Message
+              </Typography>
+              <form
+                className="space-y-6"
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                onSubmit={handleSubmit}
+              >
+                <input type="hidden" name="access_key" value="ec323071-c9a1-48e4-9bba-87c32ecc2b27" />
+
+                <TextField
+                  label="Name"
+                  name="name"
+                  value={formValues.name}
+                  onChange={(e) => setFormValues({ ...formValues, name: e.target.value })}
+                  variant="outlined"
+                  fullWidth
+                  required
+                  className="mb-4"
+                />
+                <TextField
+                  label="Email"
+                  name="email"
+                  value={formValues.email}
+                  onChange={(e) => setFormValues({ ...formValues, email: e.target.value })}
+                  variant="outlined"
+                  type="email"
+                  fullWidth
+                  required
+                  className="mb-4"
+                />
+                <TextField
+                  label="Message"
+                  name="message"
+                  value={formValues.message}
+                  onChange={(e) => setFormValues({ ...formValues, message: e.target.value })}
+                  variant="outlined"
+                  multiline
+                  rows={4}
+                  fullWidth
+                  required
+                  className="mb-4"
+                />
+                <Button type="submit" variant="contained" color="primary" fullWidth className="py-3 rounded-lg">
+                  Send Message
+                </Button>
+              </form>
+            </Grid>
+
 
       <Box className="container mx-auto p-8">
         <Typography

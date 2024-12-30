@@ -45,8 +45,8 @@ const handleSubmit = async (e) => {
         severity: "error",
       });
     }
-  }
-
+  };
+;
 
   return (
     <>

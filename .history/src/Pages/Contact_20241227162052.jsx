@@ -1,52 +1,55 @@
+import React from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import { Box, Typography, Grid, TextField, Button } from "@mui/material";
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  
+} from "@mui/material";
 
 
 const Contact = () => {
 
 
 const handleSubmit = async (e) => {
-   const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "" });
-  const [formValues, setFormValues] = useState({ name: "", email: "", message: "" });
+  e.preventDefault();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: new FormData(e.target),
+    });
 
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: new FormData(e.target),
-      });
+    const data = await response.json();
 
-      const data = await response.json();
-
-      if (data.success) {
-        setFormValues({ name: "", email: "", message: "" });
-        setSnackbar({
-          open: true,
-          message: "Form submitted successfully!",
-          severity: "success",
-        });
-      } else {
-        setSnackbar({
-          open: true,
-          message: "There was an issue submitting the form. Please try again.",
-          severity: "error",
-        });
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
+    if (data.success) {
+      setRegistration({ name: "", email: "", eventId: "" });
       setSnackbar({
         open: true,
-        message: "There was an error submitting the form. Please try again.",
+        message: "Form submitted successfully!",
+        severity: "success",
+      });
+    } else {
+      setSnackbar({
+        open: true,
+        message: "There was an issue submitting the form. Please try again.",
         severity: "error",
       });
     }
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    setSnackbar({
+      open: true,
+      message: "There was an error submitting the form. Please try again.",
+      severity: "error",
+    });
   }
-
+};
 
   return (
     <>
@@ -57,6 +60,7 @@ const handleSubmit = async (e) => {
           alt="congregation"
           className="w-full h-full object-cover rounded-3xl shadow-lg"
         />
+
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <Typography
             variant="h1"
@@ -78,6 +82,7 @@ const handleSubmit = async (e) => {
         </Typography>
 
         <Box className="bg-gradient-to-r from-blue-100 to-white p-8 rounded-lg shadow-lg">
+          {/* Contact Form */}
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
               <Typography
@@ -97,14 +102,13 @@ const handleSubmit = async (e) => {
                   name="access_key"
                   value="ec323071-c9a1-48e4-9bba-87c32ecc2b27"
                 />
-
+                <input
+                  type="hidden"
+                
+                
+                />
                 <TextField
                   label="Name"
-                  name="name"
-                  value={formValues.name}
-                  onChange={(e) =>
-                    setFormValues({ ...formValues, name: e.target.value })
-                  }
                   variant="outlined"
                   fullWidth
                   required
@@ -112,11 +116,6 @@ const handleSubmit = async (e) => {
                 />
                 <TextField
                   label="Email"
-                  name="email"
-                  value={formValues.email}
-                  onChange={(e) =>
-                    setFormValues({ ...formValues, email: e.target.value })
-                  }
                   variant="outlined"
                   type="email"
                   fullWidth
@@ -125,11 +124,6 @@ const handleSubmit = async (e) => {
                 />
                 <TextField
                   label="Message"
-                  name="message"
-                  value={formValues.message}
-                  onChange={(e) =>
-                    setFormValues({ ...formValues, message: e.target.value })
-                  }
                   variant="outlined"
                   multiline
                   rows={4}
@@ -148,6 +142,7 @@ const handleSubmit = async (e) => {
                 </Button>
               </form>
             </Grid>
+
             {/* Contact Information */}
             <Grid item xs={12} md={6}>
               <Typography

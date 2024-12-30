@@ -11,8 +11,6 @@ import {
   DialogTitle,
   DialogContent,
   Paper,
-  Snackbar,
-  Alert,
 } from "@mui/material";
 
 const Event = () => {
@@ -28,16 +26,6 @@ const Event = () => {
     email: "",
     eventId: "",
   });
-
-  const [snackbar, setSnackbar] = useState({
-    open: false,
-    message: "",
-    severity: "success", // "success", "error", "warning", "info"
-  });
-
-  const handleSnackbarClose = () => {
-    setSnackbar((prev) => ({ ...prev, open: false }));
-  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -64,25 +52,13 @@ const Event = () => {
 
       if (data.success) {
         setRegistration({ name: "", email: "", eventId: "" });
-        setSnackbar({
-          open: true,
-          message: "Form submitted successfully!",
-          severity: "success",
-        });
+        alert("Form submitted successfully!");
       } else {
-        setSnackbar({
-          open: true,
-          message: "There was an issue submitting the form. Please try again.",
-          severity: "error",
-        });
+        alert("There was an issue submitting the form. Please try again.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      setSnackbar({
-        open: true,
-        message: "There was an error submitting the form. Please try again.",
-        severity: "error",
-      });
+      alert("There was an error submitting the form. Please try again.");
     }
   };
 
@@ -90,11 +66,13 @@ const Event = () => {
     <>
       <section className="relative w-full h-screen overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-600 opacity-80 z-10"></div>
+
         <img
           src="/peopleWithTheirLifted.png"
           alt="people with their hands lifted"
           className="w-full h-full object-cover"
         />
+
         <div className="absolute inset-0 z-20 flex flex-col justify-center items-center px-4 sm:px-8">
           <h1 className="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl text-center leading-tight">
             Events & Programs
@@ -148,7 +126,10 @@ const Event = () => {
           <form
             action="https://api.web3forms.com/submit"
             method="POST"
-            onSubmit={handleSubmit}
+            onSubmit={() =>
+              setRegistration({ name: "", email: "", eventId: "" })
+              
+            }
           >
             <input
               type="hidden"
@@ -202,6 +183,7 @@ const Event = () => {
             </Box>
             <Button
               type="submit"
+              onClick={handleSubmit}
               variant="contained"
               color="primary"
               fullWidth
@@ -236,21 +218,6 @@ const Event = () => {
           </div>
         </Dialog>
       )}
-
-      <Snackbar
-        open={snackbar.open}
-        autoHideDuration={6000}
-        onClose={handleSnackbarClose}
-        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-      >
-        <Alert
-          onClose={handleSnackbarClose}
-          severity={snackbar.severity}
-          sx={{ width: "100%" }}
-        >
-          {snackbar.message}
-        </Alert>
-      </Snackbar>
     </>
   );
 };

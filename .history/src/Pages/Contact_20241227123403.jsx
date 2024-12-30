@@ -1,72 +1,30 @@
+import React from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import { Box, Typography, Grid, TextField, Button } from "@mui/material";
 
-
 const Contact = () => {
-
-
-const handleSubmit = async (e) => {
-   const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "" });
-  const [formValues, setFormValues] = useState({ name: "", email: "", message: "" });
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: new FormData(e.target),
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setFormValues({ name: "", email: "", message: "" });
-        setSnackbar({
-          open: true,
-          message: "Form submitted successfully!",
-          severity: "success",
-        });
-      } else {
-        setSnackbar({
-          open: true,
-          message: "There was an issue submitting the form. Please try again.",
-          severity: "error",
-        });
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      setSnackbar({
-        open: true,
-        message: "There was an error submitting the form. Please try again.",
-        severity: "error",
-      });
-    }
-  }
-
-
   return (
     <>
       <div className="relative w-full h-screen">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-800 to-blue-500 opacity-50 z-10"></div>
         <img
           src="/congregation.jpg"
-          alt="congregation"
+          alt="concregation"
           className="w-full h-full object-cover rounded-3xl shadow-lg"
         />
+
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <Typography
             variant="h1"
-            className="text-white font-extrabold text-4xl sm:text-3xl md:text-6xl lg:text-7xl text-center leading-tight px-4 sm:px-8"
+            className="text-white font-extrabold text-4xl sm:text-6xl text-center leading-tight"
           >
             Contact Us
           </Typography>
         </div>
       </div>
-
       <Box className="container mx-auto p-8">
         <Typography
           variant="h4"
@@ -78,6 +36,7 @@ const handleSubmit = async (e) => {
         </Typography>
 
         <Box className="bg-gradient-to-r from-blue-100 to-white p-8 rounded-lg shadow-lg">
+          {/* Contact Form */}
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
               <Typography
@@ -86,25 +45,9 @@ const handleSubmit = async (e) => {
               >
                 Send Us a Message
               </Typography>
-              <form
-                className="space-y-6"
-                action="https://api.web3forms.com/submit"
-                method="POST"
-                onSubmit={handleSubmit}
-              >
-                <input
-                  type="hidden"
-                  name="access_key"
-                  value="ec323071-c9a1-48e4-9bba-87c32ecc2b27"
-                />
-
+              <form className="space-y-6">
                 <TextField
                   label="Name"
-                  name="name"
-                  value={formValues.name}
-                  onChange={(e) =>
-                    setFormValues({ ...formValues, name: e.target.value })
-                  }
                   variant="outlined"
                   fullWidth
                   required
@@ -112,11 +55,6 @@ const handleSubmit = async (e) => {
                 />
                 <TextField
                   label="Email"
-                  name="email"
-                  value={formValues.email}
-                  onChange={(e) =>
-                    setFormValues({ ...formValues, email: e.target.value })
-                  }
                   variant="outlined"
                   type="email"
                   fullWidth
@@ -125,11 +63,6 @@ const handleSubmit = async (e) => {
                 />
                 <TextField
                   label="Message"
-                  name="message"
-                  value={formValues.message}
-                  onChange={(e) =>
-                    setFormValues({ ...formValues, message: e.target.value })
-                  }
                   variant="outlined"
                   multiline
                   rows={4}
@@ -148,6 +81,7 @@ const handleSubmit = async (e) => {
                 </Button>
               </form>
             </Grid>
+
             {/* Contact Information */}
             <Grid item xs={12} md={6}>
               <Typography
