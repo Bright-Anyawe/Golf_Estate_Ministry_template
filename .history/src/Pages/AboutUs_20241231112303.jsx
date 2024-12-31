@@ -114,6 +114,7 @@ const AboutUs = () => {
           className="w-full h-full rounded-3xl object-cover"
         />
       </div>
+
       <section className="mb-12">
         <Typography
           variant="h3"
@@ -124,14 +125,21 @@ const AboutUs = () => {
           History of the Church
         </Typography>
         <Typography variant="body1" color="textPrimary" paragraph>
-          The Church of Pentecost, founded by Irish missionary Pastor James
-          McKeown in 1937, emerged in Ghana after a split from the Apostolic
-          Church due to doctrinal differences. Initially named the Gold Coast
-          Apostolic Church, it was renamed in 1962 upon the advice of President
-          Dr. Kwame Nkrumah. McKeown&apos;s leadership saw the church grow
-          globally, transitioning to indigenous leadership in 1982 under Rev.
-          Fred S. Sarfo. Today, it operates in over 170 countries with 4.2
-          million members, emphasizing evangelism, discipleship, and community
+          ChatGPT said: ChatGPT The Church of Pentecost, a leading Pentecostal
+          denomination from Ghana, was founded by Pastor James McKeown, an Irish
+          missionary sent by the Apostolic Church in 1937 to support believers
+          in Asamankese. McKeown faced challenges, including health disputes
+          with local church leaders, leading to doctrinal differences and a
+          split from the Apostolic Church. In 1953, he established the Gold
+          Coast Apostolic Church. Following Ghana’s independence in 1957,
+          President Dr. Kwame Nkrumah advised renaming the organization to
+          resolve conflicts with the Apostolic Church. On August 1, 1962, it
+          became "The Church of Pentecost." Under McKeown's leadership, the
+          Church expanded beyond Ghana. In 1982, he handed over leadership to
+          Rev. Fred S. Sarfo, marking a transition to indigenous leadership.
+          McKeown passed away in 1989 in Northern Ireland. Today, The Church of
+          Pentecost operates in over 170 countries with a global membership of
+          over 4.2 million, driven by evangelism, discipleship, and community
           development.
         </Typography>
       </section>

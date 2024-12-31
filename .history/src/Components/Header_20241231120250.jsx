@@ -34,7 +34,16 @@ const Header = () => {
                 }`
               }
             >
-              {link.label}
+              {({ isActive }) => (
+                <>
+                  {link.label}
+                  <span
+                    className={`block h-0.5 bg-blue-500 absolute left-0 -bottom-1 transition-all duration-500 transform ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  ></span>
+                </>
+              )}
             </NavLink>
           ))}
         </nav>
@@ -62,30 +71,30 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <div
-        className={`md:hidden fixed inset-0 bg-gray-800 z-40 transform transition-all duration-500 ${
-          isMobileMenuOpen
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-full pointer-events-none"
-        }`}
-      >
-        <nav className="flex flex-col items-center space-y-4 py-8 bg-gray-800">
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className={({ isActive }) =>
-                `relative text-lg transition duration-300 ${
-                  isActive ? "text-blue-500" : "text-white"
-                }`
-              }
-              onClick={toggleMobileMenu}
-            >
-              {link.label}
-            </NavLink>
-          ))}
+      {isMobileMenuOpen && (
+        <nav className="md:hidden bg-gray-800">
+          <ul
+            className="flex flex-col items-center space-y-4 py-4 bg-slate-800 p-5 justify-center animate-fade-in"
+            style={{ animation: "fadeSlideIn 0.5s ease-in-out" }}
+          >
+            {navLinks.map((link) => (
+              <li key={link.to} className="opacity-0 animate-fade-slide">
+                <NavLink
+                  to={link.to}
+                  className={({ isActive }) =>
+                    `relative text-lg transition duration-300 ${
+                      isActive ? "text-blue-500" : "text-white"
+                    }`
+                  }
+                  onClick={toggleMobileMenu}
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
         </nav>
-      </div>
+      )}
     </header>
   );
 };

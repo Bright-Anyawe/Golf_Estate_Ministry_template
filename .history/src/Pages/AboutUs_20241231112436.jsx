@@ -128,10 +128,10 @@ const AboutUs = () => {
           McKeown in 1937, emerged in Ghana after a split from the Apostolic
           Church due to doctrinal differences. Initially named the Gold Coast
           Apostolic Church, it was renamed in 1962 upon the advice of President
-          Dr. Kwame Nkrumah. McKeown&apos;s leadership saw the church grow
-          globally, transitioning to indigenous leadership in 1982 under Rev.
-          Fred S. Sarfo. Today, it operates in over 170 countries with 4.2
-          million members, emphasizing evangelism, discipleship, and community
+          Dr. Kwame Nkrumah. McKeown's leadership saw the church grow globally,
+          transitioning to indigenous leadership in 1982 under Rev. Fred S.
+          Sarfo. Today, it operates in over 170 countries with 4.2 million
+          members, emphasizing evangelism, discipleship, and community
           development.
         </Typography>
       </section>

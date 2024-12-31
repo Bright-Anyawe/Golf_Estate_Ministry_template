@@ -26,18 +26,7 @@
   top: 5rem;
 }
 
-/* @keyframes fadeSlideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-} */
-
-@keyframes fadeSlide {
+@keyframes fadeSlideIn {
   0% {
     opacity: 0;
     transform: translateY(-20px);
@@ -47,11 +36,6 @@
     transform: translateY(0);
   }
 }
-
-.fixed.inset-0 {
-  animation: fadeSlide 0.5s ease-in-out;
-}
-
 
 .animate-fade-in {
   animation: fadeSlideIn 0.5s ease-in-out forwards;
