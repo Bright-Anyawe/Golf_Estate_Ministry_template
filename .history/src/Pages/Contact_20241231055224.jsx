@@ -2,31 +2,16 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import {
-  Box,
-  Typography,
-  Grid,
-  TextField,
-  Button,
-  Snackbar,
-  Alert,
-} from "@mui/material";
+import { Box, Typography, Grid, TextField, Button } from "@mui/material";
 import { useState } from "react";
 
+
 const Contact = () => {
-  const [snackbar, setSnackbar] = useState({
-    open: false,
-    message: "",
-    severity: "",
-  });
+  const handleSubmit = async (e) => {
+     const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "" });
+    const [formValues, setFormValues] = useState({ name: "", email: "", message: "" });
 
-  const [formValues, setFormValues] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
 
-  const handleSnackbarClose = () => setSnackbar({ ...snackbar, open: false });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -61,7 +46,8 @@ const Contact = () => {
         severity: "error",
       });
     }
-  };
+  }
+
 
   return (
     <>
@@ -101,11 +87,16 @@ const Contact = () => {
               >
                 Send Us a Message
               </Typography>
-              <form className="space-y-6" method="POST" onSubmit={handleSubmit}>
+              <form
+                className="space-y-6"
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                onSubmit={handleSubmit}
+              >
                 <input
                   type="hidden"
                   name="access_key"
-                  value="YOUR_ACCESS_KEY"
+                  value="ec323071-c9a1-48e4-9bba-87c32ecc2b27"
                 />
 
                 <TextField
@@ -158,7 +149,7 @@ const Contact = () => {
                 </Button>
               </form>
             </Grid>
-
+            {/* Contact Information */}
             <Grid item xs={12} md={6}>
               <Typography
                 variant="h6"
@@ -176,6 +167,7 @@ const Contact = () => {
                 <strong>Office Hours:</strong> Mon - Fri, 9 AM - 5 PM
               </Typography>
 
+              {/* Social Media */}
               <Typography className="text-lg font-semibold text-gray-800 mb-4">
                 Follow Us
               </Typography>
@@ -184,7 +176,6 @@ const Contact = () => {
                   href="https://web.facebook.com/people/COP-Golf-Estate-Assembly/61561098698326/?_rdc=1&_rdr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Facebook"
                   className="hover:text-blue-500 transition duration-300 transform hover:scale-110"
                 >
                   <FacebookIcon fontSize="large" />
@@ -193,7 +184,6 @@ const Contact = () => {
                   href="https://twitter.com/churchofpentecost"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Twitter"
                   className="hover:text-blue-400 transition duration-300 transform hover:scale-110"
                 >
                   <TwitterIcon fontSize="large" />
@@ -202,7 +192,6 @@ const Contact = () => {
                   href="https://instagram.com/churchofpentecost"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Instagram"
                   className="hover:text-pink-500 transition duration-300 transform hover:scale-110"
                 >
                   <InstagramIcon fontSize="large" />
@@ -211,7 +200,6 @@ const Contact = () => {
                   href="https://youtube.com/churchofpentecost"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="YouTube"
                   className="hover:text-red-500 transition duration-300 transform hover:scale-110"
                 >
                   <YouTubeIcon fontSize="large" />
@@ -221,6 +209,7 @@ const Contact = () => {
           </Grid>
         </Box>
 
+        {/* Map Section */}
         <Box className="mt-16">
           <Typography
             variant="h6"
@@ -248,18 +237,9 @@ const Contact = () => {
           ></iframe>
         </Box>
       </Box>
-
-      <Snackbar
-        open={snackbar.open}
-        autoHideDuration={6000}
-        onClose={handleSnackbarClose}
-      >
-        <Alert onClose={handleSnackbarClose} severity={snackbar.severity}>
-          {snackbar.message}
-        </Alert>
-      </Snackbar>
     </>
   );
-};
+}
+}
 
 export default Contact;
