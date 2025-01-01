@@ -97,7 +97,6 @@ const Home = () => {
             autoPlay
             loop
             muted
-            controls
           />
         </div>
 

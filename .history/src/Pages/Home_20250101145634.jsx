@@ -92,12 +92,11 @@ const Home = () => {
           <video
             width="320"
             height="540"
-            className=" responsive-video w-full h-full object-cover rounded-xl lg:w-[988.22px] lg:h-[553.39px]"
+            className=" responsive-videow-full h-full object-cover rounded-xl lg:w-[988.22px] lg:h-[553.39px]"
             src="/New year vid.mp4"
             autoPlay
             loop
             muted
-            controls
           />
         </div>
 

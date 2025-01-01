@@ -90,14 +90,11 @@ const Home = () => {
 
         <div className="relative w-full max-w-[988.22px] max-h-[553.39px] h-auto rounded-lg overflow-hidden p-4 sm:p-6 lg:p-0 lg:w-[988.22px] lg:h-[553.39px]">
           <video
-            width="320"
-            height="540"
-            className=" responsive-video w-full h-full object-cover rounded-xl lg:w-[988.22px] lg:h-[553.39px]"
-            src="/New year vid.mp4"
+            className="w-full h-full object-cover rounded-xl lg:w-[988.22px] lg:h-[553.39px]"
+            src="/public/New year vid.mp4"
             autoPlay
             loop
             muted
-            controls
           />
         </div>
 
