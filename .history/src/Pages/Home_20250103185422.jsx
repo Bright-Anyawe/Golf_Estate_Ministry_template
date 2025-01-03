@@ -6,12 +6,16 @@ import { IconButton } from "@mui/material";
 import { useState } from "react";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { Button } from "../Components/ButtonForProgramOutline";
-import { BeforeBedMessage } from "../Others/Objects";
 
 const Home = () => {
-  const { events, sermons, bibleStudies, handleDialogOpen } =
-    useContext(GeneralContext);
+  const {
+    events,
+    sermons,
+    bibleStudies,
+    setSelectedEvent,
+    handleDialogOpen,
+    handleDialogClose,
+  } = useContext(GeneralContext);
   const [darkMode, setDarkMode] = useState(false);
 
   // const handleDarkModeToggle = () => {
@@ -83,51 +87,21 @@ const Home = () => {
       </section>
       <section className="bg-white py-16 px-4">
         <div className="container mx-auto flex flex-col lg:flex-row  gap-8">
-          <div className=" flex flex-col gap-20 text-content w-full lg:w-1/2">
-            <div className="welcome">
-              <h1 className="text-4xl font-bold text-gray-800 mb-6">
-                Welcome to Our Church
-              </h1>
-              <p className="text-lg text-gray-700 leading-relaxed flex flex-col items-start">
-                At the Church of Pentecost, we aim to glorify God through
-                worship, outreach, and building a Christ-centered community.
-                Join us in spreading the message of love, hope, and salvation to
-                the world.
-              </p>
-              <button
-                className="mt-6 bg-indigo-700 text-white py-3 px-8 rounded-lg font-semibold hover:bg-indigo-800 transition duration-300"
-                onClick={() => (window.location.href = "/about")}
-              >
-                <Link to="about"> Get Involved</Link>
-              </button>
-            </div>
-            <div className="BeforeBedContainer py-16 px-4 bg-gray-100 rounded-lg shadow-lg">
-              <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">
-                Before You Sleep
-              </h2>
-              <div className="flex">
-                {BeforeBedMessage.slice(0, 1).map((message, index) => (
-                  <div
-                    key={index}
-                    className="message-card bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105"
-                  >
-                    <h3 className="text-2xl font-semibold text-indigo-700 mb-4">
-                      {message.title}
-                    </h3>
-                    <p className="text-gray-700 mb-4">{message.text}</p>
-                    <p className="text-gray-600 italic mb-4">
-                      Bible Verse: {message.Bibleverse}
-                    </p>
-                    <p className="text-gray-500 text-sm mb-4">
-                      Date: {message.date}
-                    </p>
-                    <p className="text-indigo-600 font-medium">
-                      {message.concludingGreeting}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="text-content w-full lg:w-1/2">
+            <h1 className="text-4xl font-bold text-gray-800 mb-6">
+              Welcome to Our Church
+            </h1>
+            <p className="text-lg text-gray-700 leading-relaxed flex flex-col items-start">
+              At the Church of Pentecost, we aim to glorify God through worship,
+              outreach, and building a Christ-centered community. Join us in
+              spreading the message of love, hope, and salvation to the world.
+            </p>
+            <button
+              className="mt-6 bg-indigo-700 text-white py-3 px-8 rounded-lg font-semibold hover:bg-indigo-800 transition duration-300"
+              onClick={() => (window.location.href = "/about")}
+            >
+              Get Involved
+            </button>
           </div>
 
           <div className="video-content w-full lg:w-1/2">
@@ -165,7 +139,7 @@ const Home = () => {
                   <p className="text-gray-700 font-medium text-base mb-4">
                     {event.description}
                   </p>
-                  <Button onLearnMore={() => console.log(event)} />
+                  <Button/>
                 </div>
               </div>
             ))

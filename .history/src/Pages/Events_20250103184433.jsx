@@ -19,6 +19,7 @@ const Event = () => {
   const {
     events,
     selectedEvent,
+    setSelectedEvent,
     handleDialogOpen,
     handleDialogClose,
   } = useContext(GeneralContext);

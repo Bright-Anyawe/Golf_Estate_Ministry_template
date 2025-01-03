@@ -98,7 +98,7 @@ const Home = () => {
                 className="mt-6 bg-indigo-700 text-white py-3 px-8 rounded-lg font-semibold hover:bg-indigo-800 transition duration-300"
                 onClick={() => (window.location.href = "/about")}
               >
-                <Link to="about"> Get Involved</Link>
+                <Link to="event"> Get Involved</Link>
               </button>
             </div>
             <div className="BeforeBedContainer py-16 px-4 bg-gray-100 rounded-lg shadow-lg">

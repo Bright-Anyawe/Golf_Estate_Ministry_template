@@ -6,10 +6,7 @@ import PropTypes from "prop-types";
 //   CardActions,
 //   Button,
 // } from "@mui/material";
-
 import { Button } from "./ButtonForProgramOutline";
-
-
 const EventCard = ({ event, onLearnMore }) => (
   <div className="border border-gray-300 shadow-md rounded-lg p-4">
     <h3 className="text-xl font-bold text-blue-600">{event.title}</h3>
