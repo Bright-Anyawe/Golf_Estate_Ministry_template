@@ -1,0 +1,79 @@
+@media (max-width: 500px) {
+  .teachingContainer {
+    flex-direction: column;
+  }
+}
+
+.dark {
+  background-color: #121212; /* Example background color */
+  color: #ffffff; /* Example text color */
+}
+
+
+
+.welcomeText {
+  position: relative;
+  top: 9rem;
+  font-size: 12rem;
+  font-weight: 900;
+  color: rgb(226, 185, 0);
+}
+
+.subText {
+  font-size: 4.5rem;
+  font-weight: 800;
+  position: relative;
+  top: 5rem;
+}
+
+/* @keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+ .responsive-video {
+    width: 100%; 
+    height: auto;
+  }
+
+  .video-container {
+    width: 100%;
+    height: 500px; /* Desired height */
+    overflow: hidden;
+  }
+  /* 
+.fixed.inset-0 {
+  animation: fadeSlide 0.5s ease-in-out;
+}
+
+
+.animate-fade-in {
+  animation: fadeSlideIn 0.5s ease-in-out forwards;
+}
+
+.animate-fade-slide {
+  animation: fadeSlideIn 0.5s ease-in-out forwards;
+  animation-delay: 0.1s;
+}
+
+.group:hover div {
+  background-color: #00bfff;
+}
+
