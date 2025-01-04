@@ -150,6 +150,7 @@ const Home = () => {
         </h2>
         <div className="flex flex-wrap justify-center gap-12 px-4">
           {events.length > 1 ? (
+            
             events.slice(0, 2).map((event, index) => (
               <div
                 key={index}
@@ -165,7 +166,7 @@ const Home = () => {
                   <p className="text-gray-700 font-medium text-base mb-4">
                     {event.description}
                   </p>
-                  <Button onLearnMore={() => handleDialogOpen(event)} />
+                  <Button onLearnMore={() => console.log(event)} />
                 </div>
               </div>
             ))

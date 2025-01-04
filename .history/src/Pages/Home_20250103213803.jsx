@@ -8,6 +8,7 @@ import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Button } from "../Components/ButtonForProgramOutline";
 import { BeforeBedMessage } from "../Others/Objects";
+import 
 
 const Home = () => {
   const { events, sermons, bibleStudies, handleDialogOpen } =
@@ -150,24 +151,31 @@ const Home = () => {
         </h2>
         <div className="flex flex-wrap justify-center gap-12 px-4">
           {events.length > 1 ? (
+
             events.slice(0, 2).map((event, index) => (
-              <div
-                key={index}
-                className="event-card bg-white shadow-xl rounded-lg overflow-hidden w-80 transition-transform transform hover:scale-105"
-              >
-                <div className="h-40 bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 flex justify-center items-center text-white text-2xl font-bold">
-                  {event.title.toUpperCase()}
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-500 text-sm uppercase tracking-wide mb-2">
-                    {event.date}
-                  </p>
-                  <p className="text-gray-700 font-medium text-base mb-4">
-                    {event.description}
-                  </p>
-                  <Button onLearnMore={() => handleDialogOpen(event)} />
-                </div>
-              </div>
+              <EventCard
+                            key={event.id}
+                            event={event}
+                            onLearnMore={() => handleDialogOpen(event)}
+                          />
+                        
+              // <div
+              //   key={index}
+              //   className="event-card bg-white shadow-xl rounded-lg overflow-hidden w-80 transition-transform transform hover:scale-105"
+              // >
+              //   <div className="h-40 bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 flex justify-center items-center text-white text-2xl font-bold">
+              //     {event.title.toUpperCase()}
+              //   </div>
+              //   <div className="p-6">
+              //     <p className="text-gray-500 text-sm uppercase tracking-wide mb-2">
+              //       {event.date}
+              //     </p>
+              //     <p className="text-gray-700 font-medium text-base mb-4">
+              //       {event.description}
+              //     </p>
+              //     <Button onLearnMore={() => console.log(event)} />
+              //   </div>
+              // </div>
             ))
           ) : (
             <p className="text-gray-600 text-lg">

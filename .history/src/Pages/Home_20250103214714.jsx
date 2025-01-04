@@ -165,7 +165,7 @@ const Home = () => {
                   <p className="text-gray-700 font-medium text-base mb-4">
                     {event.description}
                   </p>
-                  <Button onLearnMore={() => handleDialogOpen(event)} />
+                  <Button onLearnMore={() => handleDialogOpen} />
                 </div>
               </div>
             ))

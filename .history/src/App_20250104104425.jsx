@@ -316,7 +316,7 @@ function App() {
       >
         <Header />
         <main>
-          <EventDetail/>
+          <Event
           <Outlet />
         </main>
         <Footer />

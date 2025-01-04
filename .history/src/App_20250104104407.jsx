@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./Components/Header";
 import { useState } from "react";
 import Footer from "./Components/Footer";
-import { EventDetail } from "./Components/EventDetail";
+import EventD
 
 import { GeneralContext } from "./Context/ChurchContext";
 
@@ -316,7 +316,6 @@ function App() {
       >
         <Header />
         <main>
-          <EventDetail/>
           <Outlet />
         </main>
         <Footer />
