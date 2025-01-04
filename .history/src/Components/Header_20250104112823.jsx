@@ -66,6 +66,7 @@ const Header = () => {
         </div>
       </section>
 
+      {/* Announcement Alert Section */}
       <section className="alertSection bg-yellow-500 p-2">
         <AnnouncementAlert />
       </section>

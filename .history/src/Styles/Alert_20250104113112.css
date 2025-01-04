@@ -1,0 +1,32 @@
+/* Make the alert section fixed at the top */
+.alertOnScroll {
+  background-color: #ffcc00;  /* Choose any color */
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;  
+  top: 0;           
+  left: 0;
+  z-index: 1000;    
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.urgent-announcement .announcement-text {
+  font-size: 20px;
+  color: #000; 
+  white-space: nowrap; 
+  display: inline-block;
+  animation: scroll-left 10s linear infinite; 
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(100%); 
+  }
+  to {
+    transform: translateX(-100%); 
+  }
+}

@@ -31,7 +31,14 @@ const Home = () => {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      
+      <section className="alertOnScroll">
+        <div className="urgent-announcement">
+          <p className="announcement-text">
+            **URGENT ANNOUNCEMENT:** Join us this Sunday for a special service.
+            All are invited! Don"t miss it!
+          </p>
+        </div>
+      </section>
 
       <section className="bg-slate-200 dark:bg-slate-900 text-white text-center overflow-hidden">
         {/* <div className="darkMode flex items-end flex-col justify-around">

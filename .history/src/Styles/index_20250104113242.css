@@ -10,7 +10,7 @@
 #root {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 120px 6fr;
+  grid-template-rows: 130px 6fr;
 }
 
 header {

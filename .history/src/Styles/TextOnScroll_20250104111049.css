@@ -1,0 +1,32 @@
+
+
+/* Styling for the scrolling text container */
+.alertOnScroll {
+  background-color: #ffcc00;  /* Choose any color */
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* The text that will scroll */
+.urgent-announcement .announcement-text {
+  font-size: 20px; /* Adjust size as needed */
+  color: #000; /* Text color */
+  white-space: nowrap; /* Prevent line breaks */
+  display: inline-block;
+  animation: scroll-left 10s linear infinite; /* Adjust speed with 10s */
+}
+
+/* Define the scroll animation */
+@keyframes scroll-left {
+  from {
+    transform: translateX(100%); /* Start off to the right */
+  }
+  to {
+    transform: translateX(-100%); /* Move completely to the left */
+  }
+}

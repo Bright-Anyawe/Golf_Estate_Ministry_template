@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <header className="bg-gray-800 text-white top-0 h-24 flex flex-col w-full fixed z-50">
-      <section className="mainNav">
+      <section className="">
         <div className="container mx-auto flex justify-between items-center p-4">
           <NavLink to="/" className="font-bold text-xl">
             Golf Estate Assembly (C.O.P)
@@ -66,6 +66,7 @@ const Header = () => {
         </div>
       </section>
 
+      {/* Announcement Alert Section */}
       <section className="alertSection bg-yellow-500 p-2">
         <AnnouncementAlert />
       </section>

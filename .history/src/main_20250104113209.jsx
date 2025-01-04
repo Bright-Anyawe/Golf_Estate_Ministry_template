@@ -2,7 +2,9 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./Styles/index.css";
 import "./Styles/Home.css"
-import "./Styles/Alert.css";
+import "<div className="" />
+<Styles />
+<Alert></Alert>.css";
 
 
 import routes from "./Router/route.jsx";

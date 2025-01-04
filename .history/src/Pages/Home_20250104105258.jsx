@@ -31,8 +31,6 @@ const Home = () => {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      
-
       <section className="bg-slate-200 dark:bg-slate-900 text-white text-center overflow-hidden">
         {/* <div className="darkMode flex items-end flex-col justify-around">
           <IconButton
@@ -116,7 +114,7 @@ const Home = () => {
                     <h3 className="text-2xl font-semibold text-indigo-700 mb-4">
                       {message.title}
                     </h3>
-                    <p className="text-gray-700 mb-4 text-xl">{message.text}</p>
+                    <p className="text-gray-700 mb-4 text-2xl">{message.text}</p>
                     <p className="text-gray-600 italic mb-4">
                       Bible Verse: {message.Bibleverse}
                     </p>

@@ -31,8 +31,8 @@ const Home = () => {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      
 
+      
       <section className="bg-slate-200 dark:bg-slate-900 text-white text-center overflow-hidden">
         {/* <div className="darkMode flex items-end flex-col justify-around">
           <IconButton

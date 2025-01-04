@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import { AnnouncementAlert } from "./Alert"; 
+import { AnnouncementAlert } from "./Alert";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -19,8 +19,8 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gray-800 text-white top-0 h-24 flex flex-col w-full fixed z-50">
-      <section className="mainNav">
+    <header className="bg-gray-800 text-white top-0 h-24 flex fixed w-full z-50">
+      <section>
         <div className="container mx-auto flex justify-between items-center p-4">
           <NavLink to="/" className="font-bold text-xl">
             Golf Estate Assembly (C.O.P)
@@ -64,10 +64,33 @@ const Header = () => {
             </button>
           </div>
         </div>
+        <div
+          className={`md:hidden fixed inset-0 bg-gray-800 z-40 transform transition-all duration-500 ${
+            isMobileMenuOpen
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-y-full pointer-events-none"
+          }`}
+        >
+          <nav className="flex flex-col items-center space-y-4 py-8 bg-gray-800">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className={({ isActive }) =>
+                  `relative text-lg transition duration-300 ${
+                    isActive ? "text-blue-500" : "text-white"
+                  }`
+                }
+                onClick={toggleMobileMenu}
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
       </section>
-
-      <section className="alertSection bg-yellow-500 p-2">
-        <AnnouncementAlert />
+      <section className="alertSection">
+        <AnnouncementAlert/>
       </section>
     </header>
   );
