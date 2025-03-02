@@ -7,7 +7,8 @@ import { useState } from "react";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Button } from "../Components/ButtonForProgramOutline";
-import { BeforeBedMessage } from "../Others/Objects";
+import HeroSection from "../Components/HeroSection";
+import BeforeYouSleep from "../Components/BeforeYouSleep";
 
 const Home = () => {
   const { events, sermons, bibleStudies, handleDialogOpen } =
@@ -33,27 +34,12 @@ const Home = () => {
     <div className={darkMode ? "dark" : ""}>
       
 
-      <section className="bg-slate-200 dark:bg-slate-900 text-white text-center overflow-hidden">
-        {/* <div className="darkMode flex items-end flex-col justify-around">
-          <IconButton
-            onClick={handleDarkModeToggle}
-            className="transition-all duration-300 transform hover:scale-110 relative top-0 right-20"
-            style={{ color: darkMode ? "#fff" : "#000" }}
-          >
-            {darkMode ? <LightMode /> : <DarkMode />}
-          </IconButton>
-        </div> */}
-        <div className="w-full h-full max-w-full max-h-full relative overflow-hidden px-3 sm:px-5 md:px-10 lg:px-10 py-3 sm:py-5 md:pt-3 lg:py-5">
-          <img
-            src="/Cop%20welcome%20image.png"
-            alt="Cop welcome image"
-            className="w-full h-full rounded-3xl object-cover sm:h-10 md:h-96 lg:h-auto"
-          />
-        </div>
-      </section>
+      {}
+       <HeroSection />
+      {}
 
       <section className="presidingSection bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 text-white flex flex-col md:flex-row justify-center items-center gap-16 p-8 py-20">
-        {/* Image and Title */}
+        {}
         <div className="flex flex-shrink-0 items-center justify-center flex-col gap-8 text-center md:text-left">
           <img
             src="/Golf Estate Assembly(Cop).jpg"
@@ -65,7 +51,7 @@ const Home = () => {
           </h5>
         </div>
 
-        {/* About Section */}
+        {}
         <div className="about max-w-2xl">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center md:text-left">
             About Us
@@ -103,33 +89,8 @@ const Home = () => {
                 <Link to="/aboutUs"> Get Involved</Link>
               </button>
             </div>
-            <div className="BeforeBedContainer py-16 px-4 bg-gray-100 rounded-lg shadow-lg">
-              <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">
-                Before You Sleep
-              </h2>
-              <div className="flex ">
-                {BeforeBedMessage.slice(0, 1).map((message, index) => (
-                  <div
-                    key={index}
-                    className="message-card bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105"
-                  >
-                    <h3 className="text-2xl font-semibold text-indigo-700 mb-4">
-                      {message.title}
-                    </h3>
-                    <p className="text-gray-700 mb-4 text-xl">{message.text}</p>
-                    <p className="text-gray-600 italic mb-4">
-                      Bible Verse: {message.Bibleverse}
-                    </p>
-                    <p className="text-gray-500 text-sm mb-4">
-                      Date: {message.date}
-                    </p>
-                    <p className="text-indigo-600 font-medium">
-                      {message.concludingGreeting}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <BeforeYouSleep/>
+            {}
           </div>
 
           <div className="video-content w-full lg:w-1/2">
